@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Мой танцевальный путь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
+<style>
+  :root{
+    --bg:#0a0608; --bg2:#140a12; --ink:#ffffff; --mut:#b9a6b3; --dim:#7a6675;
+    --pink:#ff2d8a; --mag:#e0357f; --pur:#8a3dff; --vio:#c04dff; --peach:#ff8a5c; --gold:#ffc06a;
+    --glass:rgba(255,255,255,.05); --glassb:rgba(255,255,255,.10);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{background:#07050a}
+  body{font-family:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .stageouter{min-height:100dvh;display:flex;align-items:center;justify-content:center;background:#0e1621;
+    background-image:radial-gradient(60% 40% at 20% 10%,rgba(37,61,86,.55),transparent 60%),radial-gradient(50% 40% at 85% 85%,rgba(44,32,58,.5),transparent 60%)}
+  .device{position:relative;width:100%;max-width:430px;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#17212b}
+  @media(min-width:900px){
+    .stageouter{padding:26px}
+    .device{height:min(880px,calc(100dvh - 52px));border-radius:42px;border:9px solid #1b1b20;
+      box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.07)}
+  }
+  .tgstatus{flex:none;display:flex;align-items:center;justify-content:space-between;padding:8px 22px 2px;font-size:12.5px;font-weight:600;color:#fff;background:#17212b}
+  .tgbar{flex:none;display:flex;align-items:center;gap:10px;padding:8px 10px 10px;background:#17212b;border-bottom:1px solid rgba(255,255,255,.07)}
+  .tgbtn{width:34px;height:34px;border-radius:999px;border:none;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+  .tgbtn:active{background:rgba(255,255,255,.08)}
+  .tgttl{flex:1;min-width:0;text-align:center;line-height:1.15}
+  .tgttl b{display:block;font-size:15px;font-weight:600;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tgttl span{display:block;font-size:11.5px;color:#7d8e9e;margin-top:1px}
+  .phone{position:relative;flex:1;min-height:0;background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
+  .tgmain{flex:none;padding:0;background:var(--bg)}
+  .tgmain button{width:100%;border:none;cursor:pointer;font:600 15px 'Golos Text',sans-serif;color:#fff;padding:16px;
+    background:linear-gradient(92deg,#ff2d8a,#8a3dff);display:flex;align-items:center;justify-content:center;gap:8px}
+  .tgmain button:disabled{opacity:.45;cursor:default}
+  .phone:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 40% at 12% 6%,rgba(224,53,127,.30) 0%,transparent 62%),
+      radial-gradient(55% 35% at 92% 16%,rgba(138,61,255,.26) 0%,transparent 62%),
+      radial-gradient(70% 45% at 50% 104%,rgba(255,45,138,.16) 0%,transparent 62%),
+      linear-gradient(#0a0608,#120912)}
+  .phone:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.3;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+  .z{position:relative;z-index:1}
+
+  .kick{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+  h1.big{font-weight:800;line-height:.99;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
+  .acc{color:transparent;background:linear-gradient(92deg,var(--pink),var(--vio));-webkit-background-clip:text;background-clip:text}
+  .hand{font-family:'Caveat',cursive;font-weight:700;color:var(--pink);transform:rotate(-5deg);display:inline-block;text-shadow:0 0 22px rgba(255,45,138,.55)}
+  .sub{color:var(--mut);line-height:1.5}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  .btn{appearance:none;border:none;cursor:pointer;font:700 13px 'Golos Text',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+    padding:16px 24px;border-radius:999px;color:#fff;background:linear-gradient(92deg,var(--pink),var(--pur));
+    box-shadow:0 10px 30px rgba(255,45,138,.36),inset 0 1px 0 rgba(255,255,255,.28);
+    transition:transform .15s,box-shadow .15s,opacity .15s;display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%}
+  .btn:active{transform:translateY(1px)}
+  .btn[disabled]{opacity:.35;pointer-events:none}
+  .btn.ghost{background:var(--glass);border:1px solid var(--glassb);box-shadow:none;color:var(--mut);letter-spacing:.08em;text-transform:none;font-weight:600;font-size:13.5px}
+  .btn.sm{padding:12px 18px;font-size:11.5px}
+
+  .glass{background:var(--glass);border:1px solid var(--glassb);border-radius:22px;backdrop-filter:blur(10px)}
+  .glass2{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:18px}
+
+  input,textarea{font-family:'Golos Text',sans-serif}
+  .field{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:15px 16px;
+    color:#fff;font:500 15px 'Golos Text',sans-serif;outline:none;transition:border-color .2s}
+  .field::placeholder{color:var(--dim)}
+  .field:focus{border-color:var(--pink)}
+
+  .spill{padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);
+    color:var(--mut);font:600 14px 'Golos Text',sans-serif;cursor:pointer;transition:all .2s}
+  .spill.sel{background:linear-gradient(92deg,var(--pink),var(--pur));color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(255,45,138,.4)}
+
+  /* пузыри */
+  .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 12px;padding:6px 0 10px}
+  .card{position:relative;border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+    text-align:center;padding:16px;cursor:pointer;user-select:none;width:calc(50% - 6px);max-width:170px;min-width:132px;
+    border:1px solid rgba(255,255,255,.14);
+    background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.14),transparent 60%),radial-gradient(120% 120% at 70% 80%,#8a3dff 0%,#4a1a63 35%,#1c0a1a 75%);
+    box-shadow:inset 0 0 40px rgba(255,255,255,.06),inset 0 -10px 30px rgba(0,0,0,.35),0 14px 36px rgba(0,0,0,.45);
+    transition:transform .25s cubic-bezier(.2,.9,.3,1.2),box-shadow .25s,filter .25s,border-color .25s;
+    animation:float var(--fd,5.5s) ease-in-out infinite;animation-delay:var(--fl,0s)}
+  .card:nth-child(4n+2),.card:nth-child(4n+4){margin-top:20px}
+  .card:nth-child(3n+1){--fd:5.2s;--fl:-1.2s}.card:nth-child(3n+2){--fd:6.4s;--fl:-3.1s}.card:nth-child(3n+3){--fd:4.6s;--fl:-2.2s}
+  .g1,.g5,.g8{background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.16),transparent 60%),radial-gradient(120% 120% at 70% 80%,#e0357f 0%,#5a1240 40%,#1a0712 78%)}
+  .g2,.g4,.g7{background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.14),transparent 60%),radial-gradient(120% 120% at 70% 80%,#8a3dff 0%,#3b1466 40%,#140a1c 78%)}
+  .g3,.g6,.g9{background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.14),transparent 60%),radial-gradient(120% 120% at 70% 80%,#c04dff 0%,#7a1b4a 45%,#1a0712 80%)}
+  .card .ic{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    display:flex;align-items:center;justify-content:center;opacity:.85}
+  .card .ic svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card .t{font-size:13px;font-weight:500;line-height:1.25;text-wrap:balance;text-shadow:0 2px 12px rgba(0,0,0,.45);max-width:88%}
+  .card .chk{position:absolute;top:8px;left:50%;transform:translate(-50%,-6px) scale(.6);width:24px;height:24px;border-radius:50%;
+    background:linear-gradient(135deg,#ff2d8a,#c04dff);display:flex;align-items:center;justify-content:center;opacity:0;
+    transition:all .22s cubic-bezier(.2,1.4,.4,1);box-shadow:0 4px 16px rgba(255,45,138,.6)}
+  .card .chk svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .card.sel{transform:scale(1.05);border-color:transparent;
+    background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.22),transparent 60%),linear-gradient(140deg,#ff2d8a 0%,#e0357f 45%,#8a3dff 100%);
+    box-shadow:0 0 0 2px rgba(255,255,255,.55),0 0 0 6px rgba(255,45,138,.26),0 0 50px rgba(255,45,138,.5),inset 0 0 30px rgba(255,255,255,.12)}
+  .card.sel .chk{opacity:1;transform:translate(-50%,0) scale(1)}
+  .card.sel .ic{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.35);opacity:1}
+  .grid.maxed .card:not(.sel){opacity:.3;pointer-events:none;filter:grayscale(.4)}
+  .card.other{background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.08),transparent 60%),rgba(255,255,255,.03);border:1.5px dashed rgba(255,255,255,.3)}
+  .card.other .plus{font-size:26px;font-weight:300;color:#ff2d8a;line-height:1}
+  .card.other .t{font-weight:600;color:var(--mut)}
+  .card.other input{width:88%;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 10px;color:#fff;
+    font:500 12px 'Golos Text',sans-serif;outline:none;text-align:center}
+  .card.other.sel{border-style:solid;border-color:transparent}
+  .card.other.sel .t,.card.other.sel .plus{color:#fff}
+  .hot{border-color:rgba(255,120,180,.45);
+    background:radial-gradient(70% 70% at 35% 30%,rgba(255,255,255,.22),transparent 60%),radial-gradient(120% 120% at 70% 80%,#ff2d8a 0%,#c2185b 40%,#3a0e2a 82%);
+    box-shadow:inset 0 0 40px rgba(255,255,255,.1),0 0 0 1px rgba(255,45,138,.25),0 0 40px rgba(255,45,138,.3),0 14px 36px rgba(0,0,0,.45)}
+  @keyframes float{0%,100%{translate:0 0}50%{translate:0 -5px}}
+  @media(prefers-reduced-motion:reduce){.card{animation:none}}
+
+  /* ролевые карточки */
+  .rcard{display:flex;flex-direction:column;border-radius:18px;padding:16px;cursor:pointer;user-select:none;position:relative;
+    border:1px solid rgba(255,255,255,.14);
+    background:radial-gradient(120% 70% at 0% 0%,rgba(255,255,255,.08),transparent 55%),rgba(255,255,255,.03);
+    transition:transform .2s cubic-bezier(.2,.9,.3,1.2),box-shadow .2s,border-color .2s,background .2s}
+  .rcard .ric{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+    display:flex;align-items:center;justify-content:center;flex:none}
+  .rcard .ric svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .rchk{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#ff2d8a,#c04dff);display:flex;align-items:center;justify-content:center;
+    opacity:0;flex:none;transform:scale(.6);transition:all .22s cubic-bezier(.2,1.4,.4,1);box-shadow:0 4px 16px rgba(255,45,138,.6)}
+  .rchk svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .rt{font-size:16px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+  .rsub{display:block;color:var(--mut);font-size:12px;font-weight:500;margin-top:4px;line-height:1.35}
+  .rcap{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:12px 0 7px}
+  .rdesc{color:var(--mut);font-size:12.5px;line-height:1.5}
+  .rlist{list-style:none}
+  .rlist li{position:relative;padding:0 0 6px 15px;color:var(--mut);font-size:12.5px;line-height:1.35}
+  .rlist li:before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--pink)}
+  .rcard.sel{border-color:transparent;
+    background:radial-gradient(120% 70% at 0% 0%,rgba(255,255,255,.24),transparent 55%),linear-gradient(155deg,#ff2d8a 0%,#c2185b 45%,#5a1a8a 100%);
+    box-shadow:0 0 0 2px rgba(255,255,255,.55),0 0 0 6px rgba(255,45,138,.3),0 16px 50px rgba(255,45,138,.45)}
+  .rcard.sel .rchk{opacity:1;transform:scale(1)}
+  .rcard.sel .ric{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.5)}
+  .rcard.sel .rsub,.rcard.sel .rcap,.rcard.sel .rdesc,.rcard.sel .rlist li{color:#fbeaf3}
+  .rcard.sel .rlist li:before{background:#fff}
+
+  /* слайдеры */
+  .srow{margin-bottom:26px}
+  .srow .val{font-size:21px;font-weight:800;background:linear-gradient(92deg,var(--pink),var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;outline:none;cursor:pointer;background:rgba(255,255,255,.14)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+    background:linear-gradient(135deg,#ff2d8a,#c04dff);box-shadow:0 4px 14px rgba(255,45,138,.6);cursor:pointer;border:2px solid #fff}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#ff2d8a,#c04dff);border:2px solid #fff;cursor:pointer}
+
+  .chip{padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);display:inline-block}
+  .chip.hotc{background:linear-gradient(92deg,rgba(255,45,138,.35),rgba(138,61,255,.35));border-color:rgba(255,45,138,.5)}
+
+  .sep{margin:30px 0 22px;height:1px;background:linear-gradient(90deg,transparent,var(--pink),var(--vio),transparent);position:relative}
+  .sep:after{content:"♥";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#0d0710;padding:0 12px;color:var(--pink);font-size:13px}
+
+  .noscroll::-webkit-scrollbar{display:none}
+  .noscroll{scrollbar-width:none}
+  .fadein{animation:fi .3s ease both}
+  @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.fadein{animation:none}}
+  button:focus-visible,[tabindex]:focus-visible,input:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+  .clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useRef } = React;
+
+/* ============ иконки ============ */
+const I = {
+  trophy:'<path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 3M17 6h3a3 3 0 0 1-3 3"/><path d="M12 14v4M8 21h8"/>',
+  grid:'<circle cx="7" cy="7" r="2"/><circle cx="17" cy="7" r="2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 7h6M7 9v6M17 9v6M9 17h6"/>',
+  check:'<path d="M5 12l4 4L19 7"/>',
+  film:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/>',
+  star:'<path d="M12 3l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2L12 17l-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/>',
+  teach:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h6M7 12h4"/>',
+  users:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/>',
+  free:'<path d="M4 16c3-6 6-6 8 0s5 6 8 0"/><path d="M4 9c3-6 6-6 8 0s5 6 8 0"/>',
+  wave:'<path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/>',
+  note:'<path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
+  body:'<circle cx="12" cy="4.5" r="1.8"/><path d="M8 21l2.5-7L8 12l4-3 3 3h4"/><path d="M13 14l2 7"/>',
+  book:'<path d="M4 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4z"/><path d="M20 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"/>',
+  spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/>',
+  camera:'<rect x="3" y="7" width="13" height="11" rx="2"/><path d="M16 11l5-3v9l-5-3z"/>',
+  flame:'<path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3 0-6 1-9z"/>',
+  heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',
+  mirror:'<ellipse cx="12" cy="10" rx="6" ry="7"/><path d="M12 17v4M9 21h6"/>',
+  shield:'<path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/>',
+  eye:'<path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  bolt:'<path d="M13 3L5 14h6l-1 7 8-11h-6z"/>',
+  home:'<path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5"/>',
+  route:'<path d="M6 19a3 3 0 1 0 0-6h12a3 3 0 1 0 0-6M6 19h.01M18 7h.01"/>',
+  play:'<path d="M6 4l14 8-14 8z"/>',
+  chat:'<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/>',
+  user:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/>',
+  right:'<path d="M9 18l6-6-6-6"/>',
+  left:'<path d="M15 18l-6-6 6-6"/>',
+  clock:'<path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M12 7v5l3 2"/>',
+  cal:'<path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>',
+  upload:'<path d="M12 16V4M7 9l5-5 5 5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+  send:'<path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/>',
+  reset:'<path d="M3 12a9 9 0 1 0 2.6-6.4L3 8M3 3v5h5"/>',
+  logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
+  video:'<path d="M22 8l-6 4 6 4zM2 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/>',
+  x:'<path d="M18 6 6 18M6 6l12 12"/>',
+  target:'<path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>'
+};
+function Ic({ n, s = 20, w = 1.9, cls = '' }) {
+  return <svg className={cls} width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={w}
+    strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" dangerouslySetInnerHTML={{ __html: I[n] || I.target }} />;
+}
+
+/* ============ постеры ============ */
+const PAL = [
+  ['#ff2d8a', '#8a3dff', '#1a0712'], ['#c04dff', '#5a1a8a', '#140a1c'], ['#e0357f', '#5a1240', '#1a0712'],
+  ['#ff8a5c', '#c2185b', '#2a0716'], ['#8a3dff', '#3b1466', '#140a1c'], ['#ffc06a', '#c2185b', '#1a0712']
+];
+function Poster({ seed = 0, ratio = '16/9', cls = '', label }) {
+  const p = PAL[seed % PAL.length];
+  const id = 'pg' + seed + ratio.replace('/', '');
+  return (
+    <div className={'relative overflow-hidden ' + cls} style={{ aspectRatio: ratio, maxWidth: '100%' }}>
+      <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+        <defs>
+          <radialGradient id={id} cx="70%" cy="80%" r="110%">
+            <stop offset="0%" stopColor={p[0]} /><stop offset="42%" stopColor={p[1]} /><stop offset="100%" stopColor={p[2]} />
+          </radialGradient>
+        </defs>
+        <rect width="320" height="180" fill={'url(#' + id + ')'} />
+        <g fill="none" stroke="#ffffff" strokeOpacity="0.28" strokeWidth="1.1">
+          <path d={'M' + (-20 + (seed % 5) * 14) + ',190 C 60,120 110,150 150,60 190,-20 240,40 300,-10'} />
+          <path d={'M' + (10 + (seed % 4) * 18) + ',195 C 80,130 120,160 165,70 205,-5 255,55 320,5'} />
+          <path d={'M' + (40 + (seed % 3) * 16) + ',200 C 100,140 135,170 180,80 220,10 270,70 335,20'} />
+        </g>
+        <circle cx={248 - (seed % 4) * 26} cy={52 + (seed % 3) * 12} r="30" fill="#fff" fillOpacity="0.1" />
+        <circle cx={248 - (seed % 4) * 26} cy={52 + (seed % 3) * 12} r="46" fill="none" stroke="#fff" strokeOpacity="0.16" />
+      </svg>
+      {label && <span style={{ position: 'absolute', left: 14, bottom: 12, fontSize: 10.5, letterSpacing: '.22em', textTransform: 'uppercase', fontWeight: 700, color: 'rgba(255,255,255,.92)' }}>{label}</span>}
+    </div>
+  );
+}
+
+/* ============ контент онбординга (из файла Кулакова Club) ============ */
+const ROLES = [
+  { id: 'Артист', icon: 'star', sub: 'участие в клипах, выступления со звёздами, коммерция, реклама',
+    desc: 'танцевать с артистами на концертах, тв-шоу, выступать на сцене по городу, проходить кастинги в балеты к артистам и на разные коммерческие проекты (клипы, реклама)' },
+  { id: 'Хореограф', icon: 'film', sub: 'создавать своё', list: [
+    'Ставить сильные хореографии и постановки для клипов, шоу и команд', 'Создать себе имя и собственный стиль',
+    'Стать известным хореографом в России', 'Быть приглашенным, как судья в шоу и тв-проекты',
+    'Ставить командные постановки и выходить с ними на чемпы/шоукейсы', 'Быть приглашенным на ивенты по разным городам',
+    'Твои хорео хотят учить по всему миру онлайн и оффлайн'] },
+  { id: 'Фристайлер', icon: 'flame', list: [
+    'Найти свой стиль и особенность в танце', 'Быть известным в баттловой культуре', 'Выигрывать баттлы в своем стиле',
+    'Быть ярким представителей своего стиля в All styles тусовке', 'Стать судьей на баттлах',
+    'Обучать других своим инструментам и быть востребованным'] },
+  { id: 'Педагог', icon: 'teach', sub: 'хочу обучать других и зарабатывать на преподавании', list: [
+    'Полные группы и мк в своем городе', 'У меня хотят учиться и видят мою ценность, как педагога',
+    'у меня есть сильные ученики, которые выигрывают и ярко развиваются в своем стиле', 'регулярно ездить с мк по городам',
+    'стабильный доход на преподавании', 'есть медийность и респект от коллег', 'мое имя знают и уважают в индустрии'] },
+  { id: 'Организатор/своё дело', icon: 'users', list: [
+    'создаю свои проекты в городе', 'объединяю людей', 'у меня большой известный ивент в России', 'мне доверяют',
+    'я зарабатываю на своих проектах', 'у меня есть своя студия танцев, которая приносит мне доход и она популярна в городе'] },
+  { id: 'Танцы для души', icon: 'heart', sub: 'когда чаще находишься в позиции ученика и не погружён в индустрию', list: [
+    'меня замечают педагоги на классах', 'мне нравится мое тело', 'я обучаюсь у любимых педагогов', 'я езжу на большие ивенты',
+    'я выхожу на чемпы и начинаю свой путь на сцене', 'я проваленная и благодаря танцам чувствую себя живой'] }
+];
+
+const Q = {
+  3: { title: ['Чего ты хочешь ', 'достичь?'], sub: 'Можно выбрать до 3 целей.', items: [
+    ['пройти хотя бы 1 кастинг в коммерческий проект', 'camera', 'g1'],
+    ['прокачать исполнение: чистота, подача, работа на камеру, техника', 'spark', 'g2'],
+    ['поставить сильную хореографию для съёмки или чемпионата', 'film', 'g3'],
+    ['выйти на первый баттл и пройти в сетку / занять призовое', 'trophy', 'g4'],
+    ['узнать новые инструменты для развития своих танца и своих учеников', 'book', 'g5'],
+    ['пройти в селект и уверенно станцевать', 'check', 'g6'],
+    ['регулярно уделять время на своё танцевальное развитие', 'grid', 'g7'],
+    ['стать увереннее и побороть стеснение перед людьми / камерой', 'shield', 'g8']] },
+  4: { title: ['Как ты хочешь ', 'танцевать?'], sub: 'Что ты больше всего хочешь изменить в своём танце? Можно выбрать до 3.', items: [
+    ['стать пластичнее', 'wave', 'g1'], ['прокачать изоляцию в теле', 'body', 'g2'], ['стать музыкальнее', 'note', 'g3'],
+    ['свободнее импровизировать', 'free', 'g4'], ['найти свой стиль', 'spark', 'g5'], ['сделать свой танец узнаваемым', 'star', 'g6'],
+    ['уверенность в исполнении хорео', 'film', 'g7'], ['прокачать подачу', 'flame', 'g8'],
+    ['стабильно показывать хороший уровень, а не «как получится»', 'grid', 'g9']] },
+  5: { title: ['А как ты хочешь ', 'себя чувствовать?'], sub: 'Можно выбрать до 3.', items: [
+    ['уверенно выходить в круг', 'users', 'g1'], ['уверенно импровизировать перед людьми', 'eye', 'g2'],
+    ['перестать стесняться своего танца', 'heart', 'g3'], ['быть заметнее на классе', 'star', 'g4'],
+    ['меньше сравнивать себя с другими', 'mirror', 'g5'], ['уверенно танцевать на камеру', 'camera', 'g6'],
+    ['уверенно чувствовать себя на сцене', 'bolt', 'g7'], ['увереннее выходить на баттлы', 'trophy', 'g8']] }
+};
+const HOT5 = [0, 1, 6];
+
+/* ============ навыки ============ */
+const SKILLS = [
+  { id: 'tech', name: 'Техника', short: 'техника', why: 'Чистота движения: куда идёт вес, где стоит колено, что делает стопа. Пока техника хромает, всё остальное читается приблизительно.' },
+  { id: 'music', name: 'Музыкальность', short: 'музыкальность', why: 'Попадание в музыку отличает выученное от станцованного. Это навык слышать слои, а не считать восьмёрки.' },
+  { id: 'plastic', name: 'Пластика и гибкость', short: 'пластика', why: 'Пластика делает движение твоим. Без неё техника остаётся механикой и в кадре смотрится сухо.' },
+  { id: 'power', name: 'Сила тела', short: 'сила тела', why: 'Сила это контроль. Она держит форму на длинной связке и не даёт телу разваливаться к концу дубля.' },
+  { id: 'show', name: 'Подача и эмоции', short: 'подача', why: 'Подача это то, из-за чего смотрят. Один и тот же текст можно станцевать незаметно, а можно так, что не оторвутся.' },
+  { id: 'improv', name: 'Импровизация', short: 'импровизация', why: 'Импров показывает, что у тебя действительно в теле. Он же лечит страх выйти в круг и зависимость от выученного текста.' }
+];
+const SK = id => SKILLS.find(s => s.id === id) || SKILLS[0];
+
+/* ============ цели на 12 недель ============ */
+/* w = вес навыка для этой цели: 3 ключевой, 2 важный, 1 вспомогательный, 0 не нужен */
+const GOALS = {
+  'Артист': [
+    { id: 'a1', t: 'Подготовить качественное танцевальное видео для кастинга', crit: 'Готовое видео до 60 секунд: чистое исполнение, попадание в музыку, уверенная работа на камеру.', w: { tech: 3, show: 3, music: 2, plastic: 1, power: 1, improv: 0.5 } },
+    { id: 'a2', t: 'Освоить и чисто исполнить законченную хореографию', crit: 'Связка на 32 счёта станцована одним дублем без потери текста и чистоты.', w: { tech: 3, music: 2.5, power: 2, show: 2, plastic: 1, improv: 0.5 } },
+    { id: 'a3', t: 'Научиться уверенно работать перед камерой', crit: 'Три дубля подряд с удержанием взгляда и энергии, без зажимов.', w: { show: 3, tech: 2, music: 1.5, plastic: 1.5, power: 1, improv: 1 } }
+  ],
+  'Хореограф': [
+    { id: 'h1', t: 'Создать и записать собственную законченную постановку', crit: 'Постановка на 1 минуту записана целиком, видна логика развития и смена уровней.', w: { music: 3, tech: 2.5, show: 2, plastic: 1.5, improv: 1.5, power: 1 } },
+    { id: 'h2', t: 'Научиться строить выразительную хореографическую композицию', crit: 'Три разных варианта одной темы с разной динамикой и рисунком.', w: { music: 3, show: 2.5, improv: 2, tech: 2, plastic: 1, power: 0.5 } },
+    { id: 'h3', t: 'Подготовить постановку для выступления или съёмки', crit: 'Готовая постановка с разводкой по площадке и отснятым прогоном.', w: { tech: 2.5, music: 2.5, show: 2.5, power: 1.5, plastic: 1, improv: 1 } }
+  ],
+  'Фристайлер': [
+    { id: 'f1', t: 'Научиться непрерывно импровизировать 60 секунд под незнакомый трек', crit: 'Минута импрова без остановок и без повторения одних и тех же ходов.', w: { improv: 3, music: 3, plastic: 2, tech: 1.5, show: 1.5, power: 1 } },
+    { id: 'f2', t: 'Подготовить три уверенных выхода для баттла', crit: 'Три выхода по 30 секунд с внятным началом, развитием и финалом.', w: { improv: 3, show: 2.5, music: 2.5, power: 1.5, tech: 1.5, plastic: 1 } },
+    { id: 'f3', t: 'Развить собственный набор инструментов импровизации', crit: 'Личный список из 8 рабочих ходов, каждый показан на видео.', w: { improv: 3, plastic: 2.5, music: 2, tech: 1.5, show: 1, power: 1 } }
+  ],
+  'Педагог': [
+    { id: 'p1', t: 'Разработать и провести занятие с понятной структурой', crit: 'План занятия на 60 минут и запись проведённого фрагмента.', w: { tech: 3, music: 2, show: 2, plastic: 1.5, power: 1, improv: 1 } },
+    { id: 'p2', t: 'Создать учебную комбинацию и научиться объяснять её', crit: 'Комбинация на 16 счётов плюс видео объяснения по частям.', w: { tech: 3, music: 2.5, show: 2, plastic: 1.5, power: 1, improv: 0.5 } },
+    { id: 'p3', t: 'Улучшить качество демонстрации движений', crit: 'Пять базовых движений показаны эталонно, с двух ракурсов.', w: { tech: 3, plastic: 2.5, power: 2, show: 1.5, music: 1.5, improv: 0.5 } }
+  ],
+  'Организатор/своё дело': [
+    { id: 'o1', t: 'Подготовить концепцию собственного танцевального мероприятия', crit: 'Концепция на одну страницу: формат, аудитория, программа, роли.', w: { show: 2.5, music: 2, tech: 2, improv: 1, plastic: 1, power: 1 } },
+    { id: 'o2', t: 'Разработать программу танцевального проекта', crit: 'Программа проекта по неделям с ответственными и датами.', w: { music: 2, tech: 2, show: 2.5, plastic: 1, power: 1, improv: 1 } },
+    { id: 'o3', t: 'Подготовить и провести небольшое танцевальное событие', crit: 'Событие проведено, есть отснятый материал и обратная связь участников.', w: { show: 3, music: 2, tech: 2, power: 1.5, improv: 1, plastic: 1 } }
+  ],
+  'Танцы для души': [
+    { id: 'd1', t: 'Уверенно исполнить и записать одну законченную хореографию', crit: 'Связка на 32 счёта записана целиком, без остановок и без ухода взгляда в пол.', w: { tech: 3, show: 3, music: 2, plastic: 1.5, power: 1, improv: 0.5 } },
+    { id: 'd2', t: 'Научиться свободнее двигаться и импровизировать', crit: 'Минута свободного движения под незнакомый трек без зажимов.', w: { improv: 3, plastic: 2.5, music: 2, show: 2, tech: 1, power: 1 } },
+    { id: 'd3', t: 'Перестать избегать съёмки своего танца и подготовить итоговое видео', crit: 'Итоговое видео снято и ты готова его показать другим.', w: { show: 3, tech: 2, plastic: 2, music: 1.5, power: 1, improv: 1 } }
+  ]
+};
+const DEFAULT_W = { tech: 2, music: 2, plastic: 2, show: 2, power: 1, improv: 1 };
+const ALL_GOALS = Object.keys(GOALS).reduce((a, k) => a.concat(GOALS[k]), []);
+const findGoal = id => ALL_GOALS.find(g => g.id === id);
+
+/* ============ уроки ============ */
+const LESSONS = [
+  { id: 'l1', t: 'Баланс на каблуках', skill: 'tech', min: 12, lvl: 'Начальный', d: 'Как поставить стопу, чтобы каблук перестал быть препятствием. Опора, свод, работа голеностопа.', how: 'Выполняй у стены, босиком, затем в обуви. Три подхода, между ними растяжка стопы.' },
+  { id: 'l2', t: 'Правильный перенос веса', skill: 'tech', min: 14, lvl: 'Начальный', d: 'Где теряется устойчивость в шаге и как сделать перенос неслышным.', how: 'Сначала на четыре счёта, потом на два. Следи, чтобы таз шёл за опорной ногой.' },
+  { id: 'l3', t: 'Базовая походка High Heels', skill: 'tech', min: 16, lvl: 'Начальный', d: 'Собираем походку из переноса веса, линии ноги и положения корпуса.', how: 'Проходи по прямой 8 метров, снимай сбоку. Смотри на линию колена в момент касания.' },
+  { id: 'l4', t: 'Пластика корпуса', skill: 'plastic', min: 15, lvl: 'Начальный', d: 'Волны, наклоны, дыхание. Подвижный корпус без лишнего прогиба в пояснице.', how: 'Медленно и под музыку. Работа идёт из рёбер, поясница не должна болеть.' },
+  { id: 'l5', t: 'Мягкость и амплитуда рук', skill: 'plastic', min: 11, lvl: 'Средний', d: 'Линия руки от лопатки до пальцев. Убираем зажим плеча.', how: 'Перед зеркалом, затем с закрытыми глазами, чтобы ощущение закрепилось.' },
+  { id: 'l6', t: 'Работа бёдер', skill: 'power', min: 13, lvl: 'Средний', d: 'Восьмёрки, круги и акценты. База женственного движения в High Heels.', how: 'Начни без каблука, затем повтори на каблуке с опорой на стену.' },
+  { id: 'l7', t: 'Музыкальность', skill: 'music', min: 18, lvl: 'Средний', d: 'Учимся слышать слои в треке и попадать не только в бит, но и в настроение.', how: 'Слушай трек трижды до того, как начнёшь двигаться. Отметь акценты вслух.' },
+  { id: 'l8', t: 'Изоляция корпуса', skill: 'power', min: 17, lvl: 'Средний', d: 'Отдельная работа груди, рёбер и таза. Даёт чистоту в любом движении.', how: 'Каждую изоляцию по 8 счётов, зеркально. Остальное тело стоит.' },
+  { id: 'l9', t: 'Соединение движений', skill: 'music', min: 20, lvl: 'Средний', d: 'Переходы, дыхание и распределение сил внутри связки.', how: 'Собирай по два движения, потом добавляй третье. Не ускоряйся, пока переход не чистый.' },
+  { id: 'l10', t: 'Базовая хореография', skill: 'show', min: 22, lvl: 'Средний', d: 'Законченная связка на 32 счёта со сменой уровней и направлений.', how: 'Учи по восьмёркам. Снимай себя после каждой выученной восьмёрки.' },
+  { id: 'l11', t: 'Эмоциональность исполнения', skill: 'show', min: 16, lvl: 'Продвинутый', d: 'Характер, взгляд, подача. Как танцевать историю, а не последовательность движений.', how: 'Станцуй связку в трёх разных характерах и сравни записи.' },
+  { id: 'l12', t: 'Подготовка к видеосъёмке', skill: 'show', min: 14, lvl: 'Продвинутый', d: 'Кадр, ракурс, свет и как держать энергию на несколько дублей.', how: 'Выставь телефон на уровне груди. Сними три дубля подряд без перерыва.' },
+  { id: 'l13', t: 'Инструменты импровизации', skill: 'improv', min: 19, lvl: 'Средний', d: 'Набор ходов, из которых собирается свободное движение, когда в голове пусто.', how: 'Бери по одному инструменту за подход. Не пытайся использовать всё сразу.' },
+  { id: 'l14', t: 'Импров в круге', skill: 'improv', min: 15, lvl: 'Продвинутый', d: 'Как выходить в круг, держать внимание и заканчивать выход, а не затухать.', how: 'Сними три выхода по 30 секунд подряд. Между ними не останавливай камеру.' },
+  /* материалы, которых у Кристины ещё нет: помечены как заглушки */
+  { id: 's1', t: 'Структура занятия для педагога', skill: 'tech', min: 0, lvl: 'Для педагогов', stub: true, d: 'Как собрать урок: разогрев, кросс, комбинация, прогон. Материал ещё не записан.', how: 'Пока работаем по текстовому плану от куратора.' },
+  { id: 's2', t: 'Объяснение движения словами', skill: 'show', min: 0, lvl: 'Для педагогов', stub: true, d: 'Как объяснить движение, чтобы поняли с первого раза. Материал ещё не записан.', how: 'Пока разбираем на созвоне с куратором.' },
+  { id: 's3', t: 'Баттловые стратегии', skill: 'improv', min: 0, lvl: 'Для фристайла', stub: true, d: 'Как строить выход, читать соперника и держать круг. Материал ещё не записан.', how: 'Пока работаем по заданиям куратора.' },
+  { id: 's4', t: 'Композиция постановки', skill: 'music', min: 0, lvl: 'Для хореографов', stub: true, d: 'Как развивать тему, менять динамику и рисунок. Материал ещё не записан.', how: 'Пока разбираем на примерах, которые пришлёт куратор.' },
+  { id: 's5', t: 'Концепция танцевального события', skill: 'show', min: 0, lvl: 'Для организаторов', stub: true, d: 'Формат, аудитория, программа, роли в команде. Материал ещё не записан.', how: 'Пока заполняем шаблон концепции от куратора.' }
+];
+const LES = id => LESSONS.find(l => l.id === id);
+const lessonsForSkill = (skill, role) => {
+  const real = LESSONS.filter(l => l.skill === skill && !l.stub);
+  const stubs = LESSONS.filter(l => l.skill === skill && l.stub && roleStub(l.id) === role);
+  return stubs.concat(real);
+};
+function roleStub(id) {
+  return { s1: 'Педагог', s2: 'Педагог', s3: 'Фристайлер', s4: 'Хореограф', s5: 'Организатор/своё дело' }[id];
+}
+
+/* ============ шаблоны заданий ============ */
+const TASKS = {
+  tech: {
+    base: { t: 'Чистый перенос веса', task: 'Сними проходку на 16 счётов сбоку, медленно, с чистым переносом веса на каждом шаге.', crit: ['Вес приходит на всю стопу, а не падает в пятку', 'Колено не заваливается внутрь', 'Таз идёт за опорной ногой'] },
+    dev: { t: 'Техника в связке', task: 'Сними связку на 16 счётов в двух темпах: медленно и в оригинале.', crit: ['Форма не меняется при ускорении', 'Нет провалов между движениями'] },
+    res: { t: 'Техника на итоговом материале', task: 'Сними итоговый отрывок целиком, одним дублем, без монтажа.', crit: ['Чистота держится до конца дубля', 'Нет остановок и переспрашиваний'] }
+  },
+  music: {
+    base: { t: 'Слышать акценты', task: 'Сними один и тот же кусок дважды: под счёт и под акценты музыки.', crit: ['Видна разница между двумя дублями', 'Акценты музыки взяты телом'] },
+    dev: { t: 'Музыка вместо счёта', task: 'Сними связку под незнакомый трек того же темпа.', crit: ['Попадание в структуру трека', 'Нет сбоя на смене части'] },
+    res: { t: 'Музыкальность итоговой работы', task: 'Сними итоговую работу и отметь голосом три момента, где ты слышишь музыку.', crit: ['Три момента названы и видны на видео'] }
+  },
+  plastic: {
+    base: { t: 'Подвижный корпус', task: 'Сними волну корпуса и восьмёрку бёдрами, по 4 повтора в каждую сторону.', crit: ['Волна идёт из рёбер, не из поясницы', 'Амплитуда читается в кадре'] },
+    dev: { t: 'Амплитуда в движении', task: 'Сними связку, увеличив амплитуду вдвое по сравнению с обычной.', crit: ['Амплитуда выросла без потери контроля'] },
+    res: { t: 'Пластика в итоговой работе', task: 'Сними итоговый отрывок, следя за линией рук и корпуса.', crit: ['Руки дочитываются до кисти', 'Нет зажима плеч'] }
+  },
+  power: {
+    base: { t: 'Контроль и форма', task: 'Сними связку дважды подряд без паузы между дублями.', crit: ['Второй дубль не слабее первого'] },
+    dev: { t: 'Выносливость', task: 'Сними три дубля подряд, между ними не больше 15 секунд.', crit: ['Форма держится во всех трёх дублях'] },
+    res: { t: 'Сила на итоговой работе', task: 'Сними итоговую работу после разогрева и ещё раз в конце тренировки.', crit: ['Разница между дублями минимальна'] }
+  },
+  show: {
+    base: { t: 'Характер и взгляд', task: 'Станцуй одну связку в трёх разных характерах и пришли все три дубля.', crit: ['Характеры различимы', 'Взгляд не уходит в пол'] },
+    dev: { t: 'Подача на камеру', task: 'Сними связку с трёх ракурсов: фронт, три четверти, сбоку.', crit: ['Энергия держится во всех трёх дублях', 'Ты работаешь в камеру, а не мимо'] },
+    res: { t: 'Итоговое видео', task: 'Сними итоговое видео по критерию твоей цели, одним дублем.', crit: ['Видео соответствует критерию цели', 'Ты готова показать его другим'] }
+  },
+  improv: {
+    base: { t: 'Инструменты импрова', task: 'Включи незнакомый трек и сними 60 секунд свободного движения без остановки.', crit: ['Нет остановок', 'Движения не повторяются по кругу'] },
+    dev: { t: 'Импров в круге', task: 'Сними три выхода по 30 секунд подряд, камеру не останавливай.', crit: ['У каждого выхода есть начало и финал'] },
+    res: { t: 'Импров под итоговую цель', task: 'Сними минуту импрова под трек, который слышишь впервые.', crit: ['Минута без остановок', 'Использовано не меньше пяти разных ходов'] }
+  }
+};
+
+const EVENTS = [
+  { id: 'e1', t: 'Совместная практика High Heels', when: 'Воскресенье, 18:00', who: 'Ведёт Мария', d: 'Разбираем перенос веса и проходку. Включайте камеры, будет живая обратная связь.', seed: 0 },
+  { id: 'e2', t: 'Прямой эфир с Кристиной', when: 'Среда, 20:00', who: 'Кристина Кулакова', d: 'Тема: как выбрать свою цель на ближайшие полгода и не распыляться.', seed: 1 },
+  { id: 'e3', t: 'Разбор типичных ошибок', when: 'Пятница, 19:00', who: 'Ведёт Мария', d: 'Смотрим присланные видео участниц и разбираем, что повторяется чаще всего.', seed: 2 },
+  { id: 'e4', t: 'Танцевальный челлендж недели', when: 'Стартует в понедельник', who: 'Участвуют все', d: 'Одна связка, неделя на отработку, публикация в клубном чате.', seed: 3 }
+];
+const CURATOR = { name: 'Мария', role: 'твой куратор', since: 'в клубе с 2024 года' };
+/* ============ АЛГОРИТМ МАРШРУТА ============ */
+/* Приоритет навыка = вес навыка для цели, усиленный разрывом между целью и самооценкой.
+   Навык с низкой самооценкой, но ненужный для цели, наверх не попадает. */
+function rankSkills(goal, self) {
+  const w = (goal && goal.w) || DEFAULT_W;
+  return SKILLS.map(s => {
+    const weight = w[s.id] != null ? w[s.id] : 0;
+    const score = self[s.id] != null ? self[s.id] : 5;
+    const gap = (10 - score) / 10;
+    return { id: s.id, weight, score, rank: weight * (1 + gap) };
+  }).filter(x => x.weight > 0).sort((a, b) => b.rank - a.rank);
+}
+function pickPriority(goal, self, curatorPriority) {
+  if (curatorPriority && curatorPriority.length) return curatorPriority.slice(0, 3);
+  const r = rankSkills(goal, self);
+  return r.slice(0, 3).map(x => x.id);
+}
+function explainRoute(goal, priority, profile, self) {
+  if (!goal) return '';
+  const names = priority.map(id => SK(id).short);
+  const wish = (profile.q4 && profile.q4[0]) || (profile.q3 && profile.q3[0]) || '';
+  const feel = (profile.q5 && profile.q5[0]) || '';
+  let s = 'Твоя цель на 12 недель: ' + goal.t.toLowerCase() + '. Поэтому начинаем с того, что для неё решает: ' + names.join(', ') + '.';
+  const low = priority.filter(id => (self[id] != null ? self[id] : 5) <= 4);
+  if (low.length) s += ' Ты оценила себя ниже всего там же, где это нужно цели: ' + low.map(id => SK(id).short + ' ' + self[id] + ' из 10').join(', ') + '.';
+  const skipped = rankSkills(goal, self).filter(x => !priority.includes(x.id) && x.score <= 3);
+  if (skipped.length) s += ' ' + skipped.map(x => SK(x.id).name).join(' и ') + ' пока отложили: для этой цели это не главное, вернёмся позже.';
+  if (wish) s += ' Из анкеты: ты хочешь ' + wish.toLowerCase() + '.';
+  if (feel) s += ' И чувствовать себя так: ' + feel.toLowerCase() + '.';
+  return s;
+}
+
+function stageOf(n) { return n <= 4 ? 1 : n <= 8 ? 2 : 3; }
+const STAGES = {
+  1: { t: 'Фундамент', sub: 'недели 1–4', d: 'Определяем стартовую точку и ставим базу под цель.' },
+  2: { t: 'Развитие', sub: 'недели 5–8', d: 'Закрепляем, усложняем задания, смотрим промежуточный результат.' },
+  3: { t: 'Результат', sub: 'недели 9–12', d: 'Применяем освоенное и готовим итоговую работу.' }
+};
+
+function buildProgram(goal, self, profile, curatorPriority, prevVersion, reason) {
+  const priority = pickPriority(goal, self, curatorPriority);
+  const p1 = priority[0], p2 = priority[1] || priority[0], p3 = priority[2] || priority[1] || priority[0];
+  const plan = [p1, p2, p1, p2, p1, p2, p3, p3, p1, p3, p2, p3];
+  const weeks = plan.map((skill, i) => {
+    const n = i + 1, st = stageOf(n);
+    const tpl = TASKS[skill][st === 1 ? 'base' : st === 2 ? 'dev' : 'res'];
+    const ls = lessonsForSkill(skill, profile.danceRole);
+    const lesson = ls[Math.min(ls.length - 1, st - 1)] || ls[0];
+    return {
+      n, stage: st, skill,
+      title: tpl.t,
+      aim: n === 12 ? 'Снять итоговую работу по критерию цели' : tpl.task,
+      lesson: lesson ? lesson.id : null,
+      task: n === 12 && goal ? 'Сними итоговую работу: ' + goal.crit : tpl.task,
+      crit: n === 12 && goal ? [goal.crit] : tpl.crit
+    };
+  });
+  return {
+    id: 'pr' + Date.now(), goalId: goal ? goal.id : null, priority, weeks,
+    version: (prevVersion || 0) + 1, confirmed: false, createdAt: today(),
+    history: reason ? [{ v: (prevVersion || 0) + 1, reason, date: today() }] : []
+  };
+}
+function today() {
+  const d = new Date();
+  const m = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  return d.getDate() + ' ' + m[d.getMonth()];
+}
+
+/* ============ модель и хранилище ============ */
+const KEY = 'kulakova_club_v3';
+const DIAG_ST = {
+  none: { l: 'Не начата', bg: 'rgba(255,255,255,.07)', c: '#b9a6b3' },
+  pending: { l: 'Ожидает проверки', bg: 'rgba(255,192,106,.16)', c: '#ffc06a' },
+  done: { l: 'Проверена', bg: 'rgba(126,220,150,.14)', c: '#8ee0a1' },
+  more: { l: 'Нужно ещё видео', bg: 'rgba(255,138,92,.18)', c: '#ff8a5c' }
+};
+const ASG_ST = {
+  new: { l: 'Не отправлено', bg: 'rgba(255,255,255,.07)', c: '#b9a6b3' },
+  pending: { l: 'На проверке', bg: 'rgba(255,192,106,.16)', c: '#ffc06a' },
+  revision: { l: 'На доработке', bg: 'rgba(255,138,92,.18)', c: '#ff8a5c' },
+  accepted: { l: 'Принято', bg: 'rgba(126,220,150,.14)', c: '#8ee0a1' }
+};
+const SKILL_ST = {
+  todo: { l: 'Не начат', bg: 'rgba(255,255,255,.07)', c: '#b9a6b3' },
+  active: { l: 'В работе', bg: 'rgba(255,45,138,.18)', c: '#ff79b0' },
+  review: { l: 'На проверке', bg: 'rgba(255,192,106,.16)', c: '#ffc06a' },
+  confirmed: { l: 'Подтверждён', bg: 'rgba(126,220,150,.14)', c: '#8ee0a1' }
+};
+
+function makeAssignments(program) {
+  return program.weeks.map(w => ({
+    id: 'as-' + program.id + '-' + w.n, programId: program.id, week: w.n, skill: w.skill,
+    title: w.title, task: w.task, crit: w.crit, status: 'new', attempts: []
+  }));
+}
+
+function demoState() {
+  const profile = {
+    name: 'Аня', status: 'Начинающий', danceRole: 'Танцы для души',
+    q3: ['прокачать исполнение: чистота, подача, работа на камеру, техника', 'стать увереннее и побороть стеснение перед людьми / камерой'],
+    q4: ['стать пластичнее', 'уверенность в исполнении хорео'],
+    q5: ['уверенно танцевать на камеру', 'перестать стесняться своего танца']
+  };
+  const self = { tech: 5, music: 5, plastic: 6, power: 4, show: 3, improv: 2 };
+  const goal = findGoal('d1');
+  let program = buildProgram(goal, self, profile, null, 0, null);
+  program.confirmed = true;
+  program.version = 2;
+  program.history = [{ v: 2, reason: 'Куратор подтвердил маршрут после диагностики', date: '1 октября' }];
+  const asg = makeAssignments(program);
+  asg[0].status = 'accepted';
+  asg[0].attempts = [{ id: 'at1', date: '26 сентября', file: 'start.mov', fb: { good: 'Корпус держишь ровно, плечи опущены.', improve: 'На втором шаге вес уходит в пятку раньше, чем стопа успевает его принять.', next: 'Повтори упражнение на четыре счёта и пришли ещё раз.', decision: 'revision', date: '27 сентября' } },
+    { id: 'at2', date: '29 сентября', file: 'perenos-2.mov', fb: { good: 'Перенос стал тише, колено больше не заваливается.', improve: 'Таз ещё немного отстаёт от опорной ноги.', next: 'Берём это в работу на неделе 3, пока принимаю.', decision: 'accepted', date: '30 сентября' } }];
+  asg[1].status = 'pending';
+  asg[1].attempts = [{ id: 'at3', date: '6 октября', file: 'podacha.mov', fb: null }];
+  return {
+    v: 3, onboarded: false, role: 'member', week: 3,
+    profile, self, goal: goal ? { id: goal.id, t: goal.t, crit: goal.crit, custom: null, startedAt: '15 сентября', status: 'active' } : null,
+    diagnosis: {
+      status: 'done', video: { name: 'start.mov', available: false },
+      curatorScores: { tech: 4, show: 3, music: 5 },
+      strengths: 'Хорошее чувство корпуса, не боишься камеры.',
+      growth: 'Взгляд уходит в пол, подача проседает на сложных местах.',
+      comment: 'Для твоей цели сейчас решают подача и техника. Импровизацию отложим, она не мешает снять чистую связку.',
+      priority: ['show', 'tech', 'music'], recommend: 'Снимай себя раз в неделю, даже если не нравится результат.',
+      date: '1 октября'
+    },
+    program, assignments: asg,
+    watched: ['l1', 'l2', 'l10'],
+    others: [
+      { id: 'kate', name: 'Екатерина', role: 'Педагог', goal: 'Создать учебную комбинацию и научиться объяснять её', week: 2, diag: 'done', pending: 1, assignment: 'Чистый перенос веса', skill: 'tech', priority: ['tech', 'music', 'show'], self: { tech: 6, music: 4, plastic: 5, power: 5, show: 4, improv: 3 } },
+      { id: 'polina', name: 'Полина', role: 'Хореограф', goal: 'Создать и записать собственную законченную постановку', week: 7, diag: 'done', pending: 0, assignment: null, skill: 'music', priority: ['music', 'tech', 'show'], self: { tech: 7, music: 5, plastic: 6, power: 6, show: 6, improv: 5 } },
+      { id: 'marina', name: 'Марина', role: 'Фристайлер', goal: 'Научиться непрерывно импровизировать 60 секунд под незнакомый трек', week: 1, diag: 'pending', pending: 0, assignment: null, skill: 'improv', priority: ['improv', 'music', 'plastic'], self: { tech: 4, music: 3, plastic: 5, power: 4, show: 4, improv: 2 } }
+    ]
+  };
+}
+function load() {
+  try { const r = localStorage.getItem(KEY); if (r) { const p = JSON.parse(r); if (p && p.v === 3) return p; } } catch (e) {}
+  try { localStorage.removeItem('kulakova_club_app_v2'); localStorage.removeItem('kk_dance_club_demo_v1'); } catch (e) {}
+  return demoState();
+}
+function persist(s) { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} }
+
+/* производные показатели */
+function skillStatus(st, skillId) {
+  const asg = st.assignments.filter(a => a.skill === skillId);
+  if (asg.some(a => a.status === 'accepted')) return 'confirmed';
+  if (asg.some(a => a.status === 'pending')) return 'review';
+  if (st.program.priority.includes(skillId)) return 'active';
+  if (asg.some(a => a.status === 'revision')) return 'active';
+  return 'todo';
+}
+function confirmedCriteria(st) {
+  const out = [];
+  st.assignments.filter(a => a.status === 'accepted').forEach(a => a.crit.forEach(c => out.push({ c, skill: a.skill, week: a.week })));
+  return out;
+}
+function nextAction(st) {
+  if (st.diagnosis.status === 'none') return { label: 'Завершить диагностику', screen: 'diag' };
+  if (st.diagnosis.status === 'more') return { label: 'Прислать ещё видео', screen: 'diag' };
+  if (st.diagnosis.status === 'pending') return { label: 'Диагностика у куратора', screen: 'diag', wait: true };
+  const rev = st.assignments.find(a => a.status === 'revision');
+  if (rev) return { label: 'Исправить задание', screen: 'task', p: rev.id };
+  const cur = st.assignments.find(a => a.week === st.week);
+  if (cur && cur.status === 'new') return { label: 'Открыть задание недели', screen: 'task', p: cur.id };
+  if (cur && cur.status === 'pending') return { label: 'Работа у куратора', screen: 'task', p: cur.id, wait: true };
+  const fresh = [...st.assignments].reverse().find(a => a.status === 'accepted' && a.attempts.length);
+  if (fresh) return { label: 'Посмотреть обратную связь', screen: 'task', p: fresh.id };
+  return { label: 'Открыть мой путь', screen: 'path' };
+}
+/* ============ UI-примитивы ============ */
+function Bar({ v, c }) {
+  return <div style={{ height: 6, borderRadius: 999, background: 'rgba(255,255,255,.1)', overflow: 'hidden' }}>
+    <div style={{ height: '100%', width: Math.max(3, Math.min(100, v)) + '%', borderRadius: 999, background: c || 'linear-gradient(92deg,#ff2d8a,#c04dff)', transition: 'width .5s' }} />
+  </div>;
+}
+function Tag({ children, bg, c, style }) {
+  return <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 11px', borderRadius: 999, fontSize: 11, fontWeight: 700, background: bg || 'rgba(255,255,255,.07)', color: c || '#b9a6b3', ...style }}>{children}</span>;
+}
+function Head({ title, accent, sub, onProfile }) {
+  return <header style={{ padding: '22px 18px 14px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+    <div style={{ flex: 1, minWidth: 0 }}>
+      <h1 className="big" style={{ fontSize: 27 }}>{title} {accent && <span className="acc">{accent}</span>}</h1>
+      {sub && <p className="sub" style={{ fontSize: 13.5, marginTop: 8 }}>{sub}</p>}
+    </div>
+    {onProfile && <button onClick={onProfile} aria-label="Профиль" style={{ flex: 'none', width: 40, height: 40, borderRadius: 999, background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', color: '#fff', display: 'grid', placeItems: 'center', cursor: 'pointer' }}>
+      <Ic n="user" s={18} /></button>}
+  </header>;
+}
+function Sheet({ open, title, children, onClose, actions }) {
+  if (!open) return null;
+  return <div onClick={onClose} style={{ position: 'absolute', inset: 0, zIndex: 60, background: 'rgba(5,3,6,.72)', display: 'flex', alignItems: 'flex-end' }}>
+    <div className="fadein" onClick={e => e.stopPropagation()} style={{ width: '100%', background: '#140a12', borderTop: '1px solid rgba(255,255,255,.12)', borderRadius: '26px 26px 0 0', padding: '20px 20px 28px', maxHeight: '86%', overflowY: 'auto' }}>
+      <div style={{ width: 38, height: 4, borderRadius: 999, background: 'rgba(255,255,255,.18)', margin: '0 auto 16px' }} />
+      <h3 className="big" style={{ fontSize: 21, marginBottom: 10 }}>{title}</h3>
+      <div className="sub" style={{ fontSize: 14 }}>{children}</div>
+      <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 10 }}>{actions || <button className="btn" onClick={onClose}>Понятно</button>}</div>
+    </div>
+  </div>;
+}
+function VideoBox({ seed, label, min, src, note }) {
+  const [p, setP] = useState(false);
+  if (src && p) return <video src={src} controls autoPlay playsInline style={{ width: '100%', borderRadius: 20, border: '1px solid rgba(255,255,255,.12)', background: '#000' }} />;
+  return <div>
+    <div style={{ position: 'relative', borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(255,255,255,.12)' }}>
+      <Poster seed={seed} ratio="16/9" />
+      <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', background: 'linear-gradient(180deg,rgba(10,6,8,.1),rgba(10,6,8,.5))' }}>
+        <button onClick={() => setP(true)} disabled={!src} aria-label="Смотреть" style={{ width: 60, height: 60, borderRadius: 999, border: 'none', cursor: src ? 'pointer' : 'default', opacity: src ? 1 : .5, color: '#fff', background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', boxShadow: '0 10px 30px rgba(255,45,138,.5)', display: 'grid', placeItems: 'center' }}>
+          <Ic n="play" s={22} w={2.2} /></button>
+      </div>
+      <div style={{ position: 'absolute', left: 14, right: 14, bottom: 10, display: 'flex', justifyContent: 'space-between', fontSize: 11.5, fontWeight: 700 }}>
+        <span>{label}</span>{min ? <span className="tnum">{min} мин</span> : null}
+      </div>
+    </div>
+    {note && <p className="sub" style={{ fontSize: 11.5, marginTop: 8 }}>{note}</p>}
+  </div>;
+}
+function Dots({ n }) {
+  return <div style={{ display: 'flex', alignItems: 'center', gap: 0, justifyContent: 'center', padding: '14px 0 2px' }}>
+    {[1, 2, 3, 4, 5].map((i, k) => <React.Fragment key={i}>
+      {k > 0 && <span style={{ width: 24, height: 1.5, background: i <= n ? 'linear-gradient(90deg,#ff2d8a,#c04dff)' : 'rgba(255,255,255,.14)' }} />}
+      <span style={{ width: 9, height: 9, borderRadius: 999, background: i < n ? '#ff2d8a' : i === n ? '#fff' : 'rgba(255,255,255,.18)', border: '1.5px solid ' + (i <= n ? (i === n ? '#fff' : '#ff2d8a') : 'rgba(255,255,255,.22)'), boxShadow: i === n ? '0 0 0 4px rgba(255,255,255,.1),0 0 16px rgba(255,45,138,.6)' : i < n ? '0 0 12px rgba(255,45,138,.6)' : 'none' }} />
+    </React.Fragment>)}
+  </div>;
+}
+function Wrap({ children, foot }) {
+  return <div className="z fadein" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ flex: 1, overflowY: 'auto', padding: '0 18px 20px' }} className="noscroll">{children}</div>
+    {foot && <div style={{ padding: '12px 18px calc(16px + env(safe-area-inset-bottom))', background: 'linear-gradient(rgba(10,6,8,0),rgba(10,6,8,.95) 40%)', display: 'flex', flexDirection: 'column', gap: 10 }}>{foot}</div>}
+  </div>;
+}
+function Bubbles({ q, sel, other, otherOn, onToggle, onOther, onOtherText }) {
+  const maxed = sel.length + (otherOn ? 1 : 0) >= 3;
+  return <div className={'grid' + (maxed ? ' maxed' : '')}>
+    {Q[q].items.map((it, i) => <div key={i} role="button" tabIndex={0}
+      className={'card ' + it[2] + (q === 5 && HOT5.includes(i) ? ' hot' : '') + (sel.includes(i) ? ' sel' : '')}
+      onClick={() => onToggle(i)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onToggle(i); } }}>
+      <span className="ic"><Ic n={it[1]} s={14} /></span>
+      <span className="t">{it[0]}</span>
+      <span className="chk"><Ic n="check" s={12} w={3} /></span>
+    </div>)}
+    <div className={'card other' + (otherOn ? ' sel' : '')} role="button" tabIndex={0} onClick={e => { if (e.target.tagName !== 'INPUT') onOther(); }}>
+      {!otherOn && <span className="plus">+</span>}
+      <span className="t">свой вариант</span>
+      {otherOn && <input autoFocus value={other} maxLength={80} placeholder="напиши свой" onChange={e => onOtherText(e.target.value)} onClick={e => e.stopPropagation()} />}
+      <span className="chk"><Ic n="check" s={12} w={3} /></span>
+    </div>
+  </div>;
+}
+function FileRow({ label, accept, file, onPick, hint }) {
+  const ref = useRef(null);
+  return <div>
+    <input ref={ref} type="file" accept={accept || 'video/*'} style={{ display: 'none' }} onChange={e => {
+      const f = e.target.files && e.target.files[0];
+      if (!f) return onPick(null, 'Файл не выбран.');
+      if (String(f.type).indexOf('video/') !== 0) return onPick(null, 'Это не видеофайл. Выбери видео.');
+      onPick({ name: f.name, url: URL.createObjectURL(f) }, null);
+    }} />
+    <button className="btn ghost" onClick={() => ref.current && ref.current.click()}><Ic n="upload" s={16} />{file ? 'Выбрать другое видео' : (label || 'Прикрепить видео')}</button>
+    {hint && <p className="sub" style={{ fontSize: 11.5, marginTop: 8 }}>{hint}</p>}
+  </div>;
+}
+
+/* ============ ОНБОРДИНГ ============ */
+function Onboarding({ onDone, step, setStep }) {
+  const [name, setName] = useState('');
+  const [status, setStatus] = useState(null);
+  const [danceRole, setDanceRole] = useState(null);
+  const [sel, setSel] = useState({ 3: [], 4: [], 5: [] });
+  const [oth, setOth] = useState({ 3: '', 4: '', 5: '' });
+  const [othOn, setOthOn] = useState({ 3: false, 4: false, 5: false });
+  const [self, setSelf] = useState({ tech: 5, music: 5, plastic: 5, power: 5, show: 5, improv: 5 });
+  const [goalId, setGoalId] = useState(null);
+  const [ownGoal, setOwnGoal] = useState('');
+  const [ownCrit, setOwnCrit] = useState('');
+  const [vid, setVid] = useState(null);
+  const [err, setErr] = useState(null);
+
+  const picked = q => sel[q].map(i => Q[q].items[i][0]).concat(othOn[q] && oth[q] ? [oth[q]] : []);
+  const cnt = q => sel[q].length + (othOn[q] ? 1 : 0);
+  const toggle = (q, i) => setSel(s => { const a = s[q].slice(), k = a.indexOf(i); if (k > -1) a.splice(k, 1); else { if (cnt(q) >= 3) return s; a.push(i); } return { ...s, [q]: a }; });
+  const toggleOther = q => setOthOn(o => { if (!o[q] && cnt(q) >= 3) return o; return { ...o, [q]: !o[q] }; });
+  const profile = { name: name || 'Аня', status: status || 'Начинающий', danceRole, q3: picked(3), q4: picked(4), q5: picked(5) };
+
+  /* 0 старт */
+  if (step === 0) return <Wrap>
+    <div style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20, padding: '20px 0' }}>
+      <div className="kick">Давай познакомимся</div>
+      <h1 className="big" style={{ fontSize: 40, maxWidth: '12ch' }}>Давай поймём, <span className="acc">куда ты хочешь прийти</span></h1>
+      <p className="sub" style={{ fontSize: 16.5, maxWidth: '34ch' }}>Не выбирай «правильные» ответы.<br />Отмечай то, что действительно про тебя.</p>
+      <span className="hand" style={{ fontSize: 29, alignSelf: 'flex-start' }}>это займёт 3 минуты</span>
+      <button className="btn" onClick={() => setStep(1)}>Начать <Ic n="right" s={16} /></button>
+    </div>
+  </Wrap>;
+
+  /* 1 имя и статус */
+  if (step === 1) return <Wrap foot={<>
+    <p style={{ fontSize: 12.5, color: name && status ? '#8ee0a1' : '#7a6675', textAlign: 'center' }}>{name && status ? 'Готово' : 'Заполни имя и выбери статус'}</p>
+    <button className="btn" disabled={!name || !status} onClick={() => setStep(2)}>Дальше <Ic n="right" s={16} /></button></>}>
+    <Dots n={1} />
+    <div style={{ padding: '18px 0 16px' }}>
+      <div className="kick">01 / 05</div>
+      <h1 className="big" style={{ fontSize: 29, marginTop: 10 }}>Как к тебе <span className="acc">обращаться?</span></h1>
+      <p className="sub" style={{ fontSize: 14.5, marginTop: 10 }}>И расскажи немного о себе, так куратору будет проще подобрать тебе маршрут.</p>
+    </div>
+    <label htmlFor="ob-name" className="kick" style={{ display: 'block', marginBottom: 8 }}>Имя</label>
+    <input id="ob-name" className="field" maxLength={40} value={name} onChange={e => setName(e.target.value)} placeholder="напиши, как к тебе обращаться" />
+    <p className="kick" style={{ margin: '24px 0 10px' }}>Кто ты сейчас</p>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 9 }}>
+      {['Начинающий', 'Продолжающий танцор', 'Педагог'].map(s => <button key={s} className={'spill' + (status === s ? ' sel' : '')} onClick={() => setStatus(s)}>{s.toLowerCase()}</button>)}
+    </div>
+  </Wrap>;
+
+  /* 2 роль */
+  if (step === 2) return <Wrap foot={<>
+    <p style={{ fontSize: 12.5, color: '#7a6675', textAlign: 'center' }}>{danceRole ? 'Выбрано: ' + danceRole : 'Выбери направление, от него зависит маршрут'}</p>
+    <button className="btn" disabled={!danceRole} onClick={() => setStep(3)}>Дальше <Ic n="right" s={16} /></button></>}>
+    <Dots n={2} />
+    <div style={{ padding: '18px 0 16px' }}>
+      <div className="kick">02 / 05</div>
+      <h1 className="big" style={{ fontSize: 29, marginTop: 10 }}>Кем ты хочешь <span className="acc">стать в танцах?</span></h1>
+      <p className="sub" style={{ fontSize: 14.5, marginTop: 10 }}>Перспектива 1 до 3 лет. Выбери то, что откликается больше всего сейчас.</p>
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      {ROLES.map(r => <div key={r.id} role="button" tabIndex={0} className={'rcard' + (danceRole === r.id ? ' sel' : '')}
+        onClick={() => setDanceRole(danceRole === r.id ? null : r.id)} onKeyDown={e => { if (e.key === 'Enter') setDanceRole(r.id); }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+          <span className="ric"><Ic n={r.icon} s={15} /></span><span className="rchk"><Ic n="check" s={11} w={3} /></span>
+        </div>
+        <h3 className="rt">{r.id}{r.sub && <span className="rsub">{r.sub}</span>}</h3>
+        <div className="rcap">Масштаб</div>
+        {r.desc && <p className="rdesc">{r.desc}</p>}
+        {r.list && <ul className="rlist">{r.list.map((x, i) => <li key={i}>{x}</li>)}</ul>}
+      </div>)}
+    </div>
+  </Wrap>;
+
+  /* 3,4,5 пузыри */
+  if (step >= 3 && step <= 5) {
+    const q = step, n = cnt(q);
+    return <Wrap foot={<>
+      <p style={{ fontSize: 12.5, color: '#7a6675', textAlign: 'center' }}>{n ? <>Выбрано: <b style={{ color: '#fff' }}>{n} / 3</b></> : 'Можно пропустить'}</p>
+      <button className="btn" onClick={() => setStep(step + 1)}>{n ? 'Дальше' : 'Пропустить'} <Ic n="right" s={16} /></button></>}>
+      <Dots n={q} />
+      <div style={{ padding: '18px 0 10px' }}>
+        <div className="kick">{'0' + q} / 05</div>
+        <h1 className="big" style={{ fontSize: 29, marginTop: 10 }}>{Q[q].title[0]}<span className="acc">{Q[q].title[1]}</span></h1>
+        <p className="sub" style={{ fontSize: 14.5, marginTop: 10 }}>{Q[q].sub}</p>
+      </div>
+      <Bubbles q={q} sel={sel[q]} other={oth[q]} otherOn={othOn[q]} onToggle={i => toggle(q, i)} onOther={() => toggleOther(q)} onOtherText={v => setOth(o => ({ ...o, [q]: v }))} />
+    </Wrap>;
+  }
+
+  /* 6 итог анкеты */
+  if (step === 6) {
+    const blocks = [['Хочу стать', danceRole ? [danceRole] : [], true], ['Хочу достичь', picked(3), false], ['Хочу танцевать', picked(4), false], ['Хочу чувствовать', picked(5), false]];
+    return <Wrap foot={<button className="btn" onClick={() => setStep(7)}>Определить мою точку <Ic n="right" s={16} /></button>}>
+      <div style={{ padding: '22px 0 6px' }}>
+        <div className="kick">Your dance direction</div>
+        <h1 className="big" style={{ fontSize: 29, marginTop: 10 }}>Кажется, мы поняли, <span className="acc">куда ты хочешь прийти</span></h1>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 18 }}>
+        {blocks.map(([cap, arr, hot], i) => <div key={cap} className="glass" style={{ padding: 18, position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, opacity: .45, background: ['radial-gradient(80% 60% at 50% 0%,rgba(255,192,106,.5),transparent 60%)', 'radial-gradient(80% 60% at 0% 0%,rgba(255,45,138,.45),transparent 60%)', 'radial-gradient(80% 60% at 100% 0%,rgba(138,61,255,.45),transparent 60%)', 'radial-gradient(80% 60% at 50% 100%,rgba(255,138,92,.4),transparent 60%)'][i] }} />
+          <div style={{ position: 'relative' }}>
+            <div className="kick" style={{ marginBottom: 12 }}>{cap}</div>
+            {arr.length ? <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>{arr.map(t => <span key={t} className={'chip' + (hot ? ' hotc' : '')}>{t}</span>)}</div>
+              : <span style={{ color: '#7a6675', fontSize: 13.5 }}>этот шаг пока пропущен</span>}
+          </div>
+        </div>)}
+      </div>
+      <div className="sep" />
+      <h2 className="big" style={{ fontSize: 23 }}>Теперь нужно понять, <span className="acc">где ты сейчас.</span></h2>
+      <p className="sub" style={{ fontSize: 14.5, marginTop: 10 }}>Следующий шаг: оценить свою текущую точку. Это твоё мнение о себе, куратор потом посмотрит видео и даст свою оценку.</p>
+    </Wrap>;
+  }
+
+  /* 7 самооценка */
+  if (step === 7) return <Wrap foot={<button className="btn" onClick={() => setStep(8)}>Продолжить <Ic n="right" s={16} /></button>}>
+    <div style={{ padding: '22px 0 6px' }}>
+      <div className="kick">Самооценка</div>
+      <h1 className="big" style={{ fontSize: 28, marginTop: 10 }}>Оцени свои навыки <span className="acc">от 0 до 10</span></h1>
+      <p className="sub" style={{ fontSize: 14, marginTop: 10 }}>Постарайся сравнивать их между собой. Если везде будет одна и та же оценка, куратору будет сложнее понять, над чем тебе стоит работать в первую очередь.</p>
+    </div>
+    <div style={{ marginTop: 22 }}>
+      {SKILLS.map(s => <div key={s.id} className="srow">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10, gap: 10 }}>
+          <label htmlFor={'sl-' + s.id} style={{ fontSize: 15.5, fontWeight: 700 }}>{s.name}</label>
+          <span className="val">{self[s.id]}</span>
+        </div>
+        <input id={'sl-' + s.id} type="range" min="0" max="10" step="1" value={self[s.id]} onChange={e => setSelf(c => ({ ...c, [s.id]: +e.target.value }))}
+          style={{ background: 'linear-gradient(to right,#ff2d8a 0%,#c04dff ' + self[s.id] * 10 + '%,rgba(255,255,255,.14) ' + self[s.id] * 10 + '%,rgba(255,255,255,.14) 100%)' }} />
+      </div>)}
+    </div>
+  </Wrap>;
+
+  /* 8 цель на 12 недель */
+  if (step === 8) {
+    const list = (GOALS[danceRole] || GOALS['Танцы для души']).slice();
+    const ready = goalId === 'own' ? ownGoal.trim().length > 3 : !!goalId;
+    return <Wrap foot={<>
+      {!ready && <p style={{ fontSize: 12.5, color: '#7a6675', textAlign: 'center' }}>Выбери одну цель, вокруг неё соберём маршрут</p>}
+      <button className="btn" disabled={!ready} onClick={() => setStep(9)}>Дальше <Ic n="right" s={16} /></button></>}>
+      <div style={{ padding: '22px 0 6px' }}>
+        <div className="kick">Цель на цикл</div>
+        <h1 className="big" style={{ fontSize: 27, marginTop: 10 }}>Большая мечта есть. <span className="acc">Чего достигнем за 12 недель?</span></h1>
+        <p className="sub" style={{ fontSize: 14.5, marginTop: 12 }}>Ты уже рассказала, куда хочешь прийти в танцах. Теперь выберем один конкретный результат, над которым будем работать ближайшие три месяца.</p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 16 }}>
+        {list.map(g => <div key={g.id} role="button" tabIndex={0} className={'rcard' + (goalId === g.id ? ' sel' : '')} onClick={() => setGoalId(g.id)} onKeyDown={e => { if (e.key === 'Enter') setGoalId(g.id); }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <span className="ric"><Ic n="target" s={15} /></span><span className="rchk"><Ic n="check" s={11} w={3} /></span>
+          </div>
+          <h3 className="rt" style={{ fontSize: 15 }}>{g.t}</h3>
+          <div className="rcap">Критерий результата</div>
+          <p className="rdesc">{g.crit}</p>
+        </div>)}
+        <div role="button" tabIndex={0} className={'rcard' + (goalId === 'own' ? ' sel' : '')} onClick={e => { if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') setGoalId('own'); }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <span className="ric"><Ic n="spark" s={15} /></span><span className="rchk"><Ic n="check" s={11} w={3} /></span>
+          </div>
+          <h3 className="rt" style={{ fontSize: 15 }}>Сформулировать свою цель</h3>
+          {goalId === 'own' ? <div style={{ marginTop: 10 }}>
+            <input className="field" placeholder="чего хочешь достичь за 12 недель" value={ownGoal} maxLength={120} onChange={e => setOwnGoal(e.target.value)} onClick={e => e.stopPropagation()} />
+            <p className="rcap" style={{ marginTop: 12 }}>Как поймём, что цель достигнута</p>
+            <input className="field" placeholder="измеримый результат, например «видео на 60 секунд»" value={ownCrit} maxLength={160} onChange={e => setOwnCrit(e.target.value)} onClick={e => e.stopPropagation()} />
+            <p className="sub" style={{ fontSize: 11.5, marginTop: 8 }}>Критерий можно оставить пустым, куратор поможет сформулировать на диагностике.</p>
+          </div> : <p className="rdesc">Если ни один вариант не подходит, напиши свою формулировку.</p>}
+        </div>
+      </div>
+    </Wrap>;
+  }
+
+  /* 9 стартовое видео */
+  const goalObj = goalId === 'own'
+    ? { id: 'own', t: ownGoal.trim(), crit: ownCrit.trim() || 'Критерий уточнит куратор на диагностике.', w: DEFAULT_W }
+    : findGoal(goalId);
+  const prio = pickPriority(goalObj, self, null);
+  return <Wrap foot={<>
+    <button className="btn" onClick={() => onDone({ profile, self, goalObj, video: vid, skipped: !vid })}>
+      {vid ? 'Отправить на диагностику' : 'Продолжить без видео'} <Ic n="right" s={16} /></button>
+  </>}>
+    <div style={{ padding: '22px 0 6px' }}>
+      <div className="kick">Стартовая диагностика</div>
+      <h1 className="big" style={{ fontSize: 28, marginTop: 10 }}>Покажи, <span className="acc">как ты танцуешь сейчас</span></h1>
+      <p className="sub" style={{ fontSize: 14.5, marginTop: 12 }}>Не нужно идеальное видео. Куратору важно увидеть твою точку старта.</p>
+    </div>
+    <div className="glass2" style={{ padding: 18, marginTop: 16 }}>
+      {vid ? <VideoBox seed={2} label={vid.name} src={vid.url} note="Файл открыт локально, на сервер ничего не отправляется." />
+        : <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+          <span style={{ flex: 'none', width: 40, height: 40, borderRadius: 999, background: 'rgba(255,45,138,.16)', color: '#ff79b0', display: 'grid', placeItems: 'center' }}><Ic n="video" s={18} /></span>
+          <div><p style={{ fontWeight: 700, fontSize: 14.5 }}>Видео для куратора</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 4 }}>30 до 60 секунд свободного движения, этого достаточно.</p></div>
+        </div>}
+      <div style={{ marginTop: 14 }}>
+        <FileRow file={vid} onPick={(f, e) => { setVid(f); setErr(e); }} hint="Демоверсия без сервера: видео открывается только в твоём браузере." />
+      </div>
+      {err && <p style={{ marginTop: 10, fontSize: 12.5, color: '#ff8a5c', fontWeight: 600 }}>{err}</p>}
+      {!vid && <p className="sub" style={{ fontSize: 12, marginTop: 10 }}>Можно продолжить без видео. Тогда диагностика останется незавершённой, и маршрут будет предварительным.</p>}
+    </div>
+    <div className="glass2" style={{ padding: 18, marginTop: 12 }}>
+      <div className="kick" style={{ marginBottom: 10 }}>Предварительный маршрут</div>
+      <p style={{ fontSize: 14, fontWeight: 700, lineHeight: 1.3 }}>{goalObj ? goalObj.t : ''}</p>
+      <p className="sub" style={{ fontSize: 12.5, marginTop: 10 }}>{explainRoute(goalObj, prio, profile, self)}</p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 12 }}>
+        {prio.map((id, i) => <span key={id} className="chip" style={{ fontSize: 11.5, padding: '6px 10px' }}>{i + 1}. {SK(id).name}</span>)}
+      </div>
+    </div>
+  </Wrap>;
+}
+/* ============ ЭКРАНЫ УЧАСТНИЦЫ ============ */
+function GoalCard({ st, compact }) {
+  const g = st.goal;
+  if (!g) return null;
+  const wk = st.program.weeks[Math.min(st.week - 1, 11)];
+  return <div className="glass" style={{ padding: 18, position: 'relative', overflow: 'hidden' }}>
+    <div style={{ position: 'absolute', inset: 0, opacity: .5, background: 'radial-gradient(80% 60% at 10% 0%,rgba(255,45,138,.4),transparent 62%)' }} />
+    <div style={{ position: 'relative' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'flex-start' }}>
+        <div className="kick">Цель на 12 недель</div>
+        <Tag bg="rgba(255,45,138,.2)" c="#ff79b0">Неделя {st.week} / 12</Tag>
+      </div>
+      <p style={{ fontSize: 17, fontWeight: 700, lineHeight: 1.28, marginTop: 10, textWrap: 'balance' }}>{g.t}</p>
+      {!compact && <p className="sub" style={{ fontSize: 12.5, marginTop: 8 }}>Критерий: {g.crit}</p>}
+      <div style={{ marginTop: 14 }}><Bar v={Math.round(st.week / 12 * 100)} /></div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8, fontSize: 12, color: '#b9a6b3' }}>
+        <span>{STAGES[stageOf(st.week)].t}, {STAGES[stageOf(st.week)].sub}</span>
+        <span>{wk ? wk.title : ''}</span>
+      </div>
+    </div>
+  </div>;
+}
+
+function HomeScreen({ ctx }) {
+  const { st, push, go, setSheet } = ctx;
+  const na = nextAction(st);
+  const d = st.diagnosis;
+  const lastFb = (() => {
+    let out = null;
+    st.assignments.forEach(a => a.attempts.forEach(at => { if (at.fb) out = { a, at }; }));
+    return out;
+  })();
+  const wk = st.program.weeks[Math.min(st.week - 1, 11)];
+  const lesson = wk && wk.lesson ? LES(wk.lesson) : null;
+  return <div className="fadein">
+    <Head title="Привет," accent={st.profile.name + '!'} sub={st.program.confirmed ? 'Маршрут подтверждён куратором.' : 'Маршрут предварительный, ждём диагностику.'} onProfile={() => push('profile')} />
+    <div style={{ padding: '0 18px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <GoalCard st={st} />
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Что делать дальше</div>
+        <p style={{ fontSize: 16, fontWeight: 700, marginTop: 8 }}>{na.wait ? 'Работа у куратора' : na.label}</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 6 }}>
+          {na.screen === 'diag' ? 'Пока диагностика не завершена, маршрут остаётся предварительным.'
+            : na.screen === 'task' ? 'Неделя ' + st.week + ': ' + (wk ? wk.title.toLowerCase() : '')
+              : 'Открой маршрут и посмотри ближайшие недели.'}
+        </p>
+        <button className="btn" style={{ marginTop: 14 }} onClick={() => na.screen === 'path' ? go('path') : push(na.screen, na.p)}>{na.label}</button>
+      </div>
+
+      {lesson && <button onClick={() => push('lesson', lesson.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass" style={{ overflow: 'hidden' }}>
+          <Poster seed={3} ratio="21/9" label="Тренировка недели" />
+          <div style={{ padding: 18 }}>
+            <div className="kick">Тренировка этой недели</div>
+            <p style={{ fontSize: 19, fontWeight: 800, marginTop: 8 }}>{lesson.t}</p>
+            <p className="sub" style={{ fontSize: 13, marginTop: 6 }}>{SK(wk.skill).name}{lesson.stub ? ' · материал ещё не записан' : ' · ' + lesson.min + ' мин'}</p>
+          </div>
+        </div>
+      </button>}
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
+          <div className="kick">Что сказал куратор</div>
+          <Tag bg={DIAG_ST[d.status].bg} c={DIAG_ST[d.status].c}>{DIAG_ST[d.status].l}</Tag>
+        </div>
+        {lastFb ? <>
+          <p style={{ fontSize: 14, fontWeight: 700, marginTop: 10 }}>{lastFb.a.title}</p>
+          <p className="sub" style={{ fontSize: 13, marginTop: 6, lineHeight: 1.5 }}>{lastFb.at.fb.improve}</p>
+          <button className="btn ghost" style={{ marginTop: 14 }} onClick={() => push('task', lastFb.a.id)}>Открыть разбор</button>
+        </> : <p className="sub" style={{ fontSize: 13, marginTop: 10 }}>{d.status === 'done' ? d.comment : 'Пока разборов нет. Отправь первое задание.'}</p>}
+      </div>
+
+      <button onClick={() => push('event', 'e1')} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass" style={{ padding: 18 }}>
+          <div className="kick">Ближайшее событие</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
+            <div style={{ flex: 1 }}>
+              <p style={{ fontSize: 16, fontWeight: 800 }}>Совместная практика</p>
+              <p className="sub" style={{ fontSize: 12.5, marginTop: 5, display: 'flex', alignItems: 'center', gap: 6 }}><Ic n="cal" s={13} />Воскресенье, 18:00</p>
+            </div><Ic n="right" s={17} />
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>;
+}
+
+function PathScreen({ ctx }) {
+  const { st, push, upd, setSheet } = ctx;
+  const pr = st.program;
+  const wk = pr.weeks[Math.min(st.week - 1, 11)];
+  const asg = st.assignments.find(a => a.week === st.week);
+  const canAdvance = asg && asg.status === 'accepted' && st.week < 12;
+  return <div className="fadein">
+    <Head title="Мой" accent="путь" onProfile={() => push('profile')} />
+    <div style={{ padding: '0 18px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      {!pr.confirmed && <div className="glass" style={{ padding: 16, borderColor: 'rgba(255,192,106,.35)' }}>
+        <p style={{ fontSize: 13.5, fontWeight: 700, color: '#ffc06a' }}>Предварительный маршрут</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 6 }}>Куратор ещё не подтвердил программу. После диагностики приоритеты могут измениться.</p>
+      </div>}
+      {pr.confirmed && pr.history.length > 0 && <div className="glass" style={{ padding: 16, borderColor: 'rgba(126,220,150,.3)' }}>
+        <p style={{ fontSize: 13.5, fontWeight: 700, color: '#8ee0a1' }}>{pr.history[pr.history.length - 1].reason}</p>
+        <p className="sub" style={{ fontSize: 12, marginTop: 5 }}>Версия маршрута {pr.version}, {pr.history[pr.history.length - 1].date}</p>
+      </div>}
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Моя большая цель</div>
+        <p className="hand" style={{ fontSize: 27, marginTop: 6 }}>{st.profile.danceRole || 'направление не выбрано'}</p>
+      </div>
+      <GoalCard st={st} />
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Что я развиваю</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 9, marginTop: 12 }}>
+          {pr.priority.map((id, i) => {
+            const stt = SKILL_ST[skillStatus(st, id)];
+            return <button key={id} onClick={() => push('skill', id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <span style={{ flex: 'none', width: 30, height: 30, borderRadius: 999, background: stt.bg, color: stt.c, display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 800 }} className="tnum">{i + 1}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p style={{ fontSize: 14.5, fontWeight: 700 }}>{SK(id).name}</p>
+                  <p className="sub tnum" style={{ fontSize: 11.5, marginTop: 2 }}>самооценка {st.self[id]} из 10{st.diagnosis.curatorScores[id] != null ? ' · куратор ' + st.diagnosis.curatorScores[id] : ''}</p>
+                </div>
+                <Tag bg={stt.bg} c={stt.c}>{stt.l}</Tag>
+              </div>
+            </button>;
+          })}
+        </div>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 14, lineHeight: 1.5 }}>{explainRoute(st.goal && (findGoal(st.goal.id) || { t: st.goal.t, crit: st.goal.crit, w: DEFAULT_W }), pr.priority, st.profile, st.self)}</p>
+      </div>
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Мой следующий шаг</div>
+        <p style={{ fontSize: 15.5, fontWeight: 700, marginTop: 8 }}>{wk ? wk.title : ''}</p>
+        <p className="sub" style={{ fontSize: 13, marginTop: 6 }}>{asg ? asg.task : ''}</p>
+        {asg && <button className="btn" style={{ marginTop: 14 }} onClick={() => push('task', asg.id)}>Открыть задание недели</button>}
+        <button className="btn ghost" style={{ marginTop: 10 }} disabled={!canAdvance}
+          onClick={() => { upd(s => ({ week: Math.min(12, s.week + 1) })); setSheet({ t: 'Неделя ' + (st.week + 1), b: 'Ты перешла к следующей неделе маршрута. Предыдущие недели и их статусы сохранены.' }); }}>
+          Перейти к следующей неделе
+        </button>
+        {!canAdvance && st.week < 12 && <p className="sub" style={{ fontSize: 11.5, marginTop: 8 }}>Кнопка откроется, когда куратор примет задание этой недели.</p>}
+      </div>
+
+      {[1, 2, 3].map(stage => <div key={stage}>
+        <p className="kick" style={{ marginBottom: 8 }}>Этап {stage}. {STAGES[stage].t}, {STAGES[stage].sub}</p>
+        <div className="glass" style={{ padding: 8 }}>
+          {pr.weeks.filter(w => w.stage === stage).map(w => {
+            const a = st.assignments.find(x => x.week === w.n);
+            const state = w.n < st.week ? 'past' : w.n === st.week ? 'now' : 'next';
+            const ast = a ? ASG_ST[a.status] : null;
+            return <button key={w.n} onClick={() => a && push('task', a.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block', width: '100%' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '11px 10px', borderRadius: 14, background: state === 'now' ? 'rgba(255,45,138,.14)' : 'transparent' }}>
+                <span className="tnum" style={{ width: 22, textAlign: 'center', fontSize: 12, fontWeight: 800, color: state === 'next' ? '#5e4d59' : state === 'now' ? '#ff79b0' : '#b9a6b3' }}>{w.n}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p style={{ fontSize: 13.5, fontWeight: state === 'next' ? 500 : 700, color: state === 'next' ? '#b9a6b3' : '#fff' }}>{w.title}</p>
+                  <p style={{ fontSize: 11.5, color: '#7a6675', marginTop: 2 }}>{SK(w.skill).name}</p>
+                </div>
+                {ast && a.status !== 'new' && <Tag bg={ast.bg} c={ast.c}>{ast.l}</Tag>}
+              </div>
+            </button>;
+          })}
+        </div>
+      </div>)}
+    </div>
+  </div>;
+}
+
+function SkillScreen({ ctx, id }) {
+  const { st, push } = ctx;
+  const sk = SK(id), stt = SKILL_ST[skillStatus(st, id)];
+  const ls = lessonsForSkill(id, st.profile.danceRole);
+  const asg = st.assignments.filter(a => a.skill === id);
+  const cur = st.diagnosis.curatorScores[id];
+  return <div className="fadein">
+    <Poster seed={SKILLS.findIndex(x => x.id === id)} ratio="21/9" />
+    <div style={{ padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <Tag bg={stt.bg} c={stt.c}>{stt.l}</Tag>
+        <h2 className="big" style={{ fontSize: 25, marginTop: 12 }}>{sk.name}</h2>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Оценки</div>
+        <div style={{ marginTop: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 6 }}>
+            <span className="sub">Твоя самооценка</span><span className="tnum" style={{ fontWeight: 700 }}>{st.self[id]} / 10</span>
+          </div>
+          <Bar v={st.self[id] * 10} />
+        </div>
+        {cur != null ? <div style={{ marginTop: 14 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 6 }}>
+            <span className="sub">Оценка куратора</span><span className="tnum" style={{ fontWeight: 700, color: '#8ee0a1' }}>{cur} / 10</span>
+          </div>
+          <Bar v={cur * 10} c="linear-gradient(92deg,#8ee0a1,#5fb87a)" />
+        </div> : <p className="sub" style={{ fontSize: 12, marginTop: 12 }}>Куратор пока не оценивал этот навык. Для твоей цели он не в первых приоритетах.</p>}
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Зачем он нужен</div>
+        <p style={{ fontSize: 14, lineHeight: 1.55, marginTop: 10 }}>{sk.why}</p>
+      </div>
+      <div>
+        <p className="kick" style={{ marginBottom: 10 }}>Материалы</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+          {ls.map(l => <button key={l.id} onClick={() => push('lesson', l.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+            <div className="glass2" style={{ padding: 10, display: 'flex', alignItems: 'center', gap: 12 }}>
+              <div style={{ width: 54, flex: 'none' }}><Poster seed={LESSONS.findIndex(x => x.id === l.id)} ratio="1/1" /></div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <p style={{ fontSize: 14, fontWeight: 700 }}>{l.t}</p>
+                <p className="sub tnum" style={{ fontSize: 11.5, marginTop: 3 }}>{l.stub ? 'материал ещё не записан' : l.min + ' мин · ' + l.lvl}</p>
+              </div>
+              {st.watched.includes(l.id) && <span style={{ color: '#8ee0a1' }}><Ic n="check" s={16} /></span>}
+            </div>
+          </button>)}
+        </div>
+      </div>
+      <div>
+        <p className="kick" style={{ marginBottom: 10 }}>Задания по этому навыку</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+          {asg.map(a => <button key={a.id} onClick={() => push('task', a.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+            <div className="glass2" style={{ padding: 14, display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <p style={{ fontSize: 14, fontWeight: 700 }}>Неделя {a.week}. {a.title}</p>
+                <p className="sub" style={{ fontSize: 11.5, marginTop: 4 }}>{a.attempts.length ? a.attempts.length + ' попытки' : 'ещё не отправлено'}</p>
+              </div>
+              <Tag bg={ASG_ST[a.status].bg} c={ASG_ST[a.status].c}>{ASG_ST[a.status].l}</Tag>
+            </div>
+          </button>)}
+        </div>
+      </div>
+    </div>
+  </div>;
+}
+
+function LessonsScreen({ ctx }) {
+  const { st, push } = ctx;
+  const [tab, setTab] = useState('mine');
+  const mineIds = new Set(st.program.weeks.map(w => w.lesson).filter(Boolean));
+  const list = tab === 'mine' ? LESSONS.filter(l => mineIds.has(l.id)) : LESSONS;
+  return <div className="fadein">
+    <Head title="Уроки" sub="Сначала то, что ведёт к твоей цели." onProfile={() => push('profile')} />
+    <div style={{ padding: '0 18px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ display: 'flex', gap: 6, padding: 5, background: 'rgba(255,255,255,.05)', borderRadius: 999 }}>
+        {[['mine', 'Моя программа'], ['all', 'Все материалы']].map(([k, lab]) =>
+          <button key={k} onClick={() => setTab(k)} style={{ flex: 1, padding: '10px 8px', borderRadius: 999, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 12.5, fontFamily: 'inherit', color: tab === k ? '#fff' : '#b9a6b3', background: tab === k ? 'linear-gradient(92deg,#ff2d8a,#8a3dff)' : 'transparent' }}>{lab}</button>)}
+      </div>
+      {list.map(l => <button key={l.id} onClick={() => push('lesson', l.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass" style={{ overflow: 'hidden', display: 'flex' }}>
+          <div style={{ width: 100, flex: 'none' }}><Poster seed={LESSONS.findIndex(x => x.id === l.id)} ratio="1/1" /></div>
+          <div style={{ padding: 14, minWidth: 0, flex: 1 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
+              <p style={{ fontSize: 14.5, fontWeight: 700, lineHeight: 1.25 }}>{l.t}</p>
+              {st.watched.includes(l.id) && <span style={{ color: '#8ee0a1', flex: 'none' }}><Ic n="check" s={15} /></span>}
+            </div>
+            <p className="sub clamp2" style={{ fontSize: 12, marginTop: 5 }}>{l.d}</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 9, flexWrap: 'wrap' }}>
+              <Tag bg="rgba(255,45,138,.16)" c="#ff79b0">{SK(l.skill).name}</Tag>
+              {l.stub ? <Tag bg="rgba(255,192,106,.16)" c="#ffc06a">заглушка</Tag> : <span className="tnum" style={{ fontSize: 11.5, color: '#7a6675' }}>{l.min} мин</span>}
+            </div>
+          </div>
+        </div>
+      </button>)}
+    </div>
+  </div>;
+}
+
+function LessonScreen({ ctx, id }) {
+  const { st, upd } = ctx;
+  const l = LES(id) || LESSONS[0];
+  const watched = st.watched.includes(l.id);
+  return <div className="fadein">
+    <div style={{ padding: '14px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      {l.stub
+        ? <div className="glass" style={{ padding: 18, borderColor: 'rgba(255,192,106,.35)' }}>
+          <Tag bg="rgba(255,192,106,.16)" c="#ffc06a">Материал-заглушка</Tag>
+          <p style={{ fontSize: 14, lineHeight: 1.55, marginTop: 12 }}>Этот урок ещё не записан. В демоверсии он показывает, какое место в маршруте занимает тема.</p>
+        </div>
+        : <VideoBox seed={LESSONS.findIndex(x => x.id === l.id)} label={l.t} min={l.min} />}
+      <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+          <Tag bg="rgba(255,45,138,.18)" c="#ff79b0">{SK(l.skill).name}</Tag>
+          {!l.stub && <Tag><span className="tnum">{l.min} мин</span></Tag>}
+          <Tag>{l.lvl}</Tag>
+        </div>
+        <h2 className="big" style={{ fontSize: 24, marginTop: 12 }}>{l.t}</h2>
+        <p className="sub" style={{ fontSize: 14, marginTop: 8 }}>{l.d}</p>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Как выполнять</div>
+        <p style={{ fontSize: 14, lineHeight: 1.55, marginTop: 10 }}>{l.how}</p>
+      </div>
+      <button className="btn" disabled={watched} style={watched ? { background: 'rgba(126,220,150,.14)', color: '#8ee0a1', boxShadow: 'none', opacity: 1, pointerEvents: 'none' } : null}
+        onClick={() => upd(s => s.watched.includes(l.id) ? {} : { watched: [...s.watched, l.id] })}>
+        {watched ? <><Ic n="check" s={16} w={2.6} />Просмотрено</> : 'Отметить как просмотренный'}
+      </button>
+      <p className="sub" style={{ fontSize: 11.5, textAlign: 'center' }}>Просмотр урока это активность. Подтверждает прогресс только принятое задание.</p>
+    </div>
+  </div>;
+}
+function TaskScreen({ ctx, id }) {
+  const { st, upd, setSheet, push } = ctx;
+  const a = st.assignments.find(x => x.id === id);
+  const [file, setFile] = useState(null);
+  const [err, setErr] = useState(null);
+  if (!a) return <div style={{ padding: 20 }} className="sub">Задание не найдено.</div>;
+  const wk = st.program.weeks.find(w => w.n === a.week);
+  const stt = ASG_ST[a.status];
+  const canSend = a.status === 'new' || a.status === 'revision';
+  function send() {
+    if (!file) { setErr('Сначала выбери видеофайл.'); return; }
+    upd(s => ({
+      assignments: s.assignments.map(x => x.id === a.id ? {
+        ...x, status: 'pending',
+        attempts: [...x.attempts, { id: 'at' + Date.now(), date: today(), file: file.name, url: file.url, fb: null }]
+      } : x)
+    }));
+    setFile(null); setErr(null);
+    setSheet({ t: 'Работа отправлена', b: 'Задание получило статус «На проверке». В демоверсии видео не уходит на сервер: чтобы увидеть разбор, открой кабинет куратора.' });
+  }
+  return <div className="fadein">
+    <div style={{ padding: '14px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <Tag bg={stt.bg} c={stt.c}>{stt.l}</Tag>
+        <h2 className="big" style={{ fontSize: 24, marginTop: 12 }}>{a.title}</h2>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 7 }}>Неделя {a.week} · {STAGES[stageOf(a.week)].t} · навык «{SK(a.skill).name}»</p>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Что нужно сделать</div>
+        <p style={{ fontSize: 14, lineHeight: 1.55, marginTop: 10 }}>{a.task}</p>
+        <div className="kick" style={{ marginTop: 16, marginBottom: 8 }}>Критерии проверки</div>
+        {a.crit.map((c, i) => <div key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', padding: '4px 0' }}>
+          <span style={{ flex: 'none', width: 6, height: 6, borderRadius: 999, background: a.status === 'accepted' ? '#8ee0a1' : '#ff2d8a', marginTop: 7 }} />
+          <p style={{ fontSize: 13.5, lineHeight: 1.45, color: a.status === 'accepted' ? '#8ee0a1' : '#fff' }}>{c}</p>
+        </div>)}
+      </div>
+      {wk && wk.lesson && <button className="btn ghost" onClick={() => push('lesson', wk.lesson)}>Открыть материал недели</button>}
+
+      {canSend && <div style={{ border: '1.5px dashed rgba(255,45,138,.4)', borderRadius: 20, padding: 18, background: 'rgba(255,45,138,.05)' }}>
+        <p style={{ fontSize: 14.5, fontWeight: 700 }}>{a.status === 'revision' ? 'Отправить новую попытку' : 'Отправить видео куратору'}</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 5 }}>Прошлые попытки и комментарии сохранятся.</p>
+        {file && <div style={{ marginTop: 14 }}><VideoBox seed={4} label={file.name} src={file.url} note="Файл открыт локально, на сервер ничего не отправляется." /></div>}
+        <div style={{ marginTop: 14 }}><FileRow file={file} onPick={(f, e) => { setFile(f); setErr(e); }} /></div>
+        {err && <p style={{ marginTop: 10, fontSize: 12.5, color: '#ff8a5c', fontWeight: 600 }}>{err}</p>}
+        <button className="btn" style={{ marginTop: 10 }} onClick={send}><Ic n="send" s={16} />Отправить на проверку</button>
+      </div>}
+
+      {a.status === 'pending' && <div className="glass" style={{ padding: 18, borderColor: 'rgba(255,192,106,.35)' }}>
+        <p style={{ fontSize: 14, fontWeight: 700, color: '#ffc06a' }}>Работа у куратора</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 6 }}>Чтобы увидеть разбор в демоверсии, перейди в кабинет куратора и проверь работу.</p>
+      </div>}
+
+      {a.attempts.length > 0 && <div>
+        <p className="kick" style={{ marginBottom: 10 }}>История попыток</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {a.attempts.map((at, i) => <div key={at.id} className="glass" style={{ padding: 16 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 10, alignItems: 'center' }}>
+              <p style={{ fontSize: 13.5, fontWeight: 700 }}>Попытка {i + 1}</p>
+              <span className="sub" style={{ fontSize: 11.5 }}>{at.date}</span>
+            </div>
+            <p className="sub" style={{ fontSize: 12, marginTop: 5 }}>Файл: {at.file || 'без файла'}</p>
+            {!at.url && <p className="sub" style={{ fontSize: 11.5, marginTop: 4 }}>Видео было выбрано локально. Для просмотра после перезагрузки нужно выбрать файл заново.</p>}
+            {at.url && <div style={{ marginTop: 10 }}><VideoBox seed={5} label="Твоё видео" src={at.url} /></div>}
+            {at.fb ? <div style={{ marginTop: 14 }}>
+              {[['Что получилось', at.fb.good, '#8ee0a1'], ['Что улучшить', at.fb.improve, '#ff8a5c'], ['Что делать дальше', at.fb.next, '#ff79b0']].map(([cap, txt, c], k) =>
+                <div key={cap} style={{ marginTop: k ? 12 : 0 }}>
+                  <div className="kick" style={{ color: c }}>{cap}</div>
+                  <p style={{ fontSize: 13.5, lineHeight: 1.5, marginTop: 5 }}>{txt}</p>
+                </div>)}
+              <div style={{ marginTop: 12 }}>
+                <Tag bg={at.fb.decision === 'accepted' ? ASG_ST.accepted.bg : ASG_ST.revision.bg} c={at.fb.decision === 'accepted' ? ASG_ST.accepted.c : ASG_ST.revision.c}>
+                  {at.fb.decision === 'accepted' ? 'Принято ' + at.fb.date : 'На доработку ' + at.fb.date}</Tag>
+              </div>
+            </div> : <p className="sub" style={{ fontSize: 12.5, marginTop: 10 }}>Ответа куратора пока нет.</p>}
+          </div>)}
+        </div>
+      </div>}
+
+      {a.status === 'accepted' && <div className="glass" style={{ padding: 18, borderColor: 'rgba(126,220,150,.3)' }}>
+        <p style={{ fontSize: 14, fontWeight: 700, color: '#8ee0a1' }}>Критерий подтверждён</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 6 }}>Это подтверждает конкретный результат, а не весь навык целиком.</p>
+      </div>}
+    </div>
+  </div>;
+}
+
+function TasksScreen({ ctx }) {
+  const { st, push } = ctx;
+  const d = st.diagnosis;
+  const conf = confirmedCriteria(st);
+  const done = st.assignments.filter(a => a.status === 'accepted').length;
+  const sent = st.assignments.filter(a => a.attempts.length).length;
+  return <div className="fadein">
+    <Head title="Обратная" accent="связь" onProfile={() => push('profile')} />
+    <div style={{ padding: '0 18px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div className="glass" style={{ padding: 18, display: 'flex', alignItems: 'center', gap: 14 }}>
+        <span style={{ flex: 'none', width: 50, height: 50, borderRadius: 999, background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', display: 'grid', placeItems: 'center', fontSize: 20, fontWeight: 800 }}>М</span>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p style={{ fontSize: 18, fontWeight: 800 }}>{CURATOR.name}</p>
+          <p className="sub" style={{ fontSize: 12.5, marginTop: 3 }}>{CURATOR.role}, {CURATOR.since}</p>
+        </div>
+        <Tag bg={DIAG_ST[d.status].bg} c={DIAG_ST[d.status].c}>{DIAG_ST[d.status].l}</Tag>
+      </div>
+
+      <button onClick={() => push('diag')} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass" style={{ padding: 18 }}>
+          <div className="kick">Стартовая диагностика</div>
+          <p style={{ fontSize: 14, fontWeight: 700, marginTop: 8 }}>{d.status === 'done' ? 'Проверена ' + (d.date || '') : d.status === 'pending' ? 'Ждёт куратора' : d.status === 'more' ? 'Куратор просит ещё видео' : 'Не начата'}</p>
+          {d.status === 'done' && <p className="sub clamp2" style={{ fontSize: 12.5, marginTop: 6 }}>{d.comment}</p>}
+        </div>
+      </button>
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Три разных показателя</div>
+        <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div>
+            <p style={{ fontSize: 13, fontWeight: 700 }}>Активность</p>
+            <p className="sub tnum" style={{ fontSize: 12.5, marginTop: 3 }}>{st.watched.length} уроков просмотрено · {sent} из 12 заданий отправлено</p>
+          </div>
+          <div>
+            <p style={{ fontSize: 13, fontWeight: 700 }}>Подтверждённый прогресс</p>
+            <p className="sub tnum" style={{ fontSize: 12.5, marginTop: 3 }}>{done} заданий принято · {conf.length} критериев подтверждено</p>
+          </div>
+          <div>
+            <p style={{ fontSize: 13, fontWeight: 700 }}>Развитие навыков</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 3 }}>{Object.keys(d.curatorScores).length ? 'Есть стартовая оценка куратора. Повторной оценки ещё не было, поэтому динамику не показываем.' : 'Оценки куратора пока нет.'}</p>
+          </div>
+        </div>
+      </div>
+
+      {conf.length > 0 && <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Что уже подтверждено</div>
+        {conf.map((c, i) => <div key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', marginTop: 10 }}>
+          <span style={{ color: '#8ee0a1', flex: 'none', marginTop: 1 }}><Ic n="check" s={14} w={2.6} /></span>
+          <div><p style={{ fontSize: 13.5, lineHeight: 1.4 }}>{c.c}</p>
+            <p className="sub" style={{ fontSize: 11, marginTop: 2 }}>{SK(c.skill).name} · неделя {c.week}</p></div>
+        </div>)}
+      </div>}
+
+      <p className="kick">Задания маршрута</p>
+      {st.assignments.map(a => <button key={a.id} onClick={() => push('task', a.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass2" style={{ padding: 14, display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+          <span className="tnum" style={{ flex: 'none', width: 26, height: 26, borderRadius: 999, background: 'rgba(255,255,255,.07)', display: 'grid', placeItems: 'center', fontSize: 11.5, fontWeight: 800, color: '#b9a6b3' }}>{a.week}</span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p style={{ fontSize: 14, fontWeight: 700 }}>{a.title}</p>
+            <p className="sub" style={{ fontSize: 11.5, marginTop: 3 }}>{SK(a.skill).name}{a.attempts.length ? ' · попыток: ' + a.attempts.length : ''}</p>
+          </div>
+          <Tag bg={ASG_ST[a.status].bg} c={ASG_ST[a.status].c}>{ASG_ST[a.status].l}</Tag>
+        </div>
+      </button>)}
+    </div>
+  </div>;
+}
+
+function DiagScreen({ ctx }) {
+  const { st, upd, setSheet } = ctx;
+  const d = st.diagnosis;
+  const [file, setFile] = useState(null);
+  const [err, setErr] = useState(null);
+  const send = () => {
+    if (!file) { setErr('Сначала выбери видеофайл.'); return; }
+    upd(() => ({ diagnosis: { ...d, status: 'pending', video: { name: file.name, available: true, url: file.url } } }));
+    setFile(null); setErr(null);
+    setSheet({ t: 'Видео выбрано', b: 'Диагностика помечена как «Ожидает проверки». В демоверсии файл не уходит на сервер: открой кабинет куратора, чтобы провести диагностику.' });
+  };
+  return <div className="fadein">
+    <div style={{ padding: '14px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <Tag bg={DIAG_ST[d.status].bg} c={DIAG_ST[d.status].c}>{DIAG_ST[d.status].l}</Tag>
+        <h2 className="big" style={{ fontSize: 25, marginTop: 12 }}>Стартовая диагностика</h2>
+        <p className="sub" style={{ fontSize: 13.5, marginTop: 8 }}>Самооценка это твоё мнение о себе. Диагностика это взгляд куратора со стороны. Они живут отдельно.</p>
+      </div>
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Твоя самооценка</div>
+        {SKILLS.map(s => <div key={s.id} style={{ marginTop: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 5 }}>
+            <span>{s.name}</span><span className="tnum" style={{ color: '#ff79b0', fontWeight: 700 }}>{st.self[s.id]}</span>
+          </div><Bar v={st.self[s.id] * 10} />
+        </div>)}
+      </div>
+
+      {d.status === 'done' ? <>
+        <div className="glass" style={{ padding: 18, borderColor: 'rgba(126,220,150,.3)' }}>
+          <div className="kick" style={{ color: '#8ee0a1' }}>Оценка куратора</div>
+          {Object.keys(d.curatorScores).length === 0 && <p className="sub" style={{ fontSize: 13, marginTop: 10 }}>Куратор не выставлял баллы, ограничился комментарием.</p>}
+          {Object.keys(d.curatorScores).map(k => <div key={k} style={{ marginTop: 12 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 5 }}>
+              <span>{SK(k).name}</span>
+              <span className="tnum" style={{ fontWeight: 700 }}><span style={{ color: '#7a6675' }}>сама {st.self[k]} · </span><span style={{ color: '#8ee0a1' }}>куратор {d.curatorScores[k]}</span></span>
+            </div><Bar v={d.curatorScores[k] * 10} c="linear-gradient(92deg,#8ee0a1,#5fb87a)" />
+          </div>)}
+          <p className="sub" style={{ fontSize: 11.5, marginTop: 12 }}>Куратор оценивает только навыки, важные для твоей цели.</p>
+        </div>
+        <div className="glass" style={{ padding: 18 }}>
+          <div className="kick" style={{ color: '#8ee0a1' }}>Сильные стороны</div>
+          <p style={{ fontSize: 13.5, lineHeight: 1.5, marginTop: 7 }}>{d.strengths}</p>
+          <div className="kick" style={{ color: '#ff8a5c', marginTop: 16 }}>Зоны развития</div>
+          <p style={{ fontSize: 13.5, lineHeight: 1.5, marginTop: 7 }}>{d.growth}</p>
+          <div className="kick" style={{ color: '#ff79b0', marginTop: 16 }}>Комментарий</div>
+          <p style={{ fontSize: 13.5, lineHeight: 1.5, marginTop: 7 }}>{d.comment}</p>
+          {d.recommend && <>
+            <div className="kick" style={{ marginTop: 16 }}>Рекомендации</div>
+            <p style={{ fontSize: 13.5, lineHeight: 1.5, marginTop: 7 }}>{d.recommend}</p></>}
+        </div>
+      </> : <div style={{ border: '1.5px dashed rgba(255,45,138,.4)', borderRadius: 20, padding: 18, background: 'rgba(255,45,138,.05)' }}>
+        <p style={{ fontSize: 14.5, fontWeight: 700 }}>{d.status === 'more' ? 'Куратор просит ещё одно видео' : 'Пришли стартовое видео'}</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 5 }}>Не нужно идеальное видео. Куратору важно увидеть твою точку старта.</p>
+        {file && <div style={{ marginTop: 14 }}><VideoBox seed={2} label={file.name} src={file.url} note="Файл открыт локально." /></div>}
+        <div style={{ marginTop: 14 }}><FileRow file={file} onPick={(f, e) => { setFile(f); setErr(e); }} /></div>
+        {err && <p style={{ marginTop: 10, fontSize: 12.5, color: '#ff8a5c', fontWeight: 600 }}>{err}</p>}
+        <button className="btn" style={{ marginTop: 10 }} onClick={send}>Отправить на диагностику</button>
+      </div>}
+
+      {d.video && d.video.name && <div className="glass2" style={{ padding: 16 }}>
+        <p className="sub" style={{ fontSize: 12.5 }}>Стартовое видео: {d.video.name}</p>
+        {!d.video.url && <p className="sub" style={{ fontSize: 11.5, marginTop: 5 }}>Видео было выбрано локально. Для просмотра после перезагрузки требуется повторно выбрать файл.</p>}
+      </div>}
+    </div>
+  </div>;
+}
+
+function ClubScreen({ ctx }) {
+  const { push, setSheet } = ctx;
+  return <div className="fadein">
+    <Head title="Клуб" sub="Эфиры, практики и люди, которые идут туда же." onProfile={() => push('profile')} />
+    <div style={{ padding: '0 18px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <button onClick={() => push('event', 'e1')} style={{ all: 'unset', cursor: 'pointer', display: 'block' }}>
+        <div className="glass" style={{ overflow: 'hidden' }}>
+          <Poster seed={0} ratio="16/9" label="Ближайшее" />
+          <div style={{ padding: 18 }}>
+            <p style={{ fontSize: 17, fontWeight: 800 }}>Совместная практика High Heels</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 6, display: 'flex', alignItems: 'center', gap: 6 }}><Ic n="cal" s={13} />Воскресенье, 18:00 · ведёт Мария</p>
+          </div>
+        </div>
+      </button>
+      <p className="kick">Календарь</p>
+      <div className="glass" style={{ padding: 8 }}>
+        {EVENTS.map((e, i) => <button key={e.id} onClick={() => push('event', e.id)} style={{ all: 'unset', cursor: 'pointer', display: 'block', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 10px' }}>
+            <span style={{ flex: 'none', width: 38, height: 38, borderRadius: 12, background: 'rgba(255,45,138,.14)', color: '#ff79b0', display: 'grid', placeItems: 'center' }}><Ic n={i === 1 ? 'video' : i === 3 ? 'flame' : 'users'} s={17} /></span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <p style={{ fontSize: 14, fontWeight: 700 }}>{e.t}</p>
+              <p className="sub" style={{ fontSize: 11.5, marginTop: 3 }}>{e.when}</p>
+            </div><Ic n="right" s={16} />
+          </div>
+        </button>)}
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+          <span style={{ flex: 'none', width: 42, height: 42, borderRadius: 12, background: 'rgba(138,61,255,.18)', color: '#c9a6ff', display: 'grid', placeItems: 'center' }}><Ic n="chat" s={18} /></span>
+          <div><p style={{ fontSize: 14.5, fontWeight: 700 }}>Общайся с участницами клуба в Telegram</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 5 }}>Чаты делятся по целям, а не по тарифам.</p></div>
+        </div>
+        <button className="btn" style={{ marginTop: 14 }} onClick={() => setSheet({ t: 'Чат появится после запуска', b: 'Это демоверсия. В рабочем приложении кнопка откроет клубный чат в Telegram.' })}>Перейти в чат</button>
+      </div>
+    </div>
+  </div>;
+}
+
+function EventScreen({ ctx, id }) {
+  const { setSheet } = ctx;
+  const e = EVENTS.find(x => x.id === id) || EVENTS[0];
+  return <div className="fadein">
+    <Poster seed={e.seed} ratio="16/9" />
+    <div style={{ padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <Tag bg="rgba(255,45,138,.18)" c="#ff79b0">{e.when}</Tag>
+        <h2 className="big" style={{ fontSize: 25, marginTop: 12 }}>{e.t}</h2>
+        <p className="sub" style={{ fontSize: 13, marginTop: 7 }}>{e.who}</p>
+      </div>
+      <div className="glass" style={{ padding: 18 }}><p style={{ fontSize: 14, lineHeight: 1.55 }}>{e.d}</p></div>
+      <button className="btn" onClick={() => setSheet({ t: 'Напоминание поставлено', b: 'В демоверсии оно не отправляется.' })}>Напомнить мне</button>
+    </div>
+  </div>;
+}
+
+function ProfileScreen({ ctx }) {
+  const { st, upd, setSheet, setStack } = ctx;
+  const conf = confirmedCriteria(st);
+  return <div className="fadein">
+    <div style={{ padding: '18px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <span style={{ flex: 'none', width: 60, height: 60, borderRadius: 999, background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', display: 'grid', placeItems: 'center', fontSize: 25, fontWeight: 800 }}>{st.profile.name[0]}</span>
+        <div><p style={{ fontSize: 23, fontWeight: 800 }}>{st.profile.name}</p>
+          <p className="sub" style={{ fontSize: 12.5, marginTop: 3 }}>{st.profile.status} · {st.profile.danceRole}</p></div>
+      </div>
+      <GoalCard st={st} compact />
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Ответы анкеты</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 12 }}>
+          {[...st.profile.q3, ...st.profile.q4, ...st.profile.q5].map(t => <span key={t} className="chip" style={{ fontSize: 11.5, padding: '6px 10px' }}>{t}</span>)}
+        </div>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 9 }}>
+        {[[st.watched.length, 'уроков'], [st.assignments.filter(a => a.status === 'accepted').length, 'принято'], [conf.length, 'критериев']].map(([v, l], i) =>
+          <div key={i} className="glass2" style={{ padding: 14, textAlign: 'center' }}>
+            <p className="tnum" style={{ fontSize: 22, fontWeight: 800 }}>{v}</p>
+            <p style={{ fontSize: 10.5, color: '#7a6675', marginTop: 2 }}>{l}</p></div>)}
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick" style={{ marginBottom: 12 }}>Самооценка на старте</div>
+        {SKILLS.map(s => <div key={s.id} style={{ marginBottom: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 5 }}>
+            <span>{s.name}</span>
+            <span className="tnum" style={{ fontWeight: 700 }}>
+              <span style={{ color: '#ff79b0' }}>{st.self[s.id]}</span>
+              {st.diagnosis.curatorScores[s.id] != null && <span style={{ color: '#8ee0a1' }}> · куратор {st.diagnosis.curatorScores[s.id]}</span>}
+            </span>
+          </div><Bar v={st.self[s.id] * 10} />
+        </div>)}
+        <p className="sub" style={{ fontSize: 11.5 }}>Самооценка не меняется автоматически. Её меняешь только ты или куратор на повторной диагностике.</p>
+      </div>
+      <div className="glass" style={{ padding: 18, position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: .4, background: 'radial-gradient(80% 60% at 100% 0%,rgba(138,61,255,.5),transparent 62%)' }} />
+        <div style={{ position: 'relative' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10 }}>
+            <div><div className="kick">Моя подписка</div>
+              <p className="tnum" style={{ fontSize: 23, fontWeight: 800, marginTop: 8 }}>3 500 ₽<span style={{ fontSize: 14, color: '#b9a6b3', fontWeight: 500 }}> / мес</span></p></div>
+            <Tag bg="rgba(126,220,150,.14)" c="#8ee0a1">Активна</Tag>
+          </div>
+          <div style={{ height: 1, background: 'rgba(255,255,255,.08)', margin: '14px 0' }} />
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13 }}>
+            <span className="sub">Следующее списание</span><span className="tnum" style={{ fontWeight: 700 }}>8 ноября 2026</span>
+          </div>
+          <button className="btn ghost" style={{ marginTop: 14 }} onClick={() => setSheet({ t: 'Управление подпиской', b: 'В демоверсии оплата не подключена.' })}>Управление подпиской</button>
+        </div>
+      </div>
+      <div className="glass" style={{ padding: 8 }}>
+        <button onClick={() => { upd(() => ({ role: 'curator' })); setStack([{ s: 'curator' }]); }} style={{ all: 'unset', cursor: 'pointer', display: 'block', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 10px' }}>
+            <span style={{ flex: 'none', width: 38, height: 38, borderRadius: 12, background: 'rgba(255,45,138,.14)', color: '#ff79b0', display: 'grid', placeItems: 'center' }}><Ic n="users" s={17} /></span>
+            <div style={{ flex: 1 }}><p style={{ fontSize: 14, fontWeight: 700 }}>Режим куратора</p>
+              <p className="sub" style={{ fontSize: 11.5, marginTop: 2 }}>Кабинет Марии</p></div><Ic n="right" s={16} />
+          </div>
+        </button>
+        <button onClick={() => setSheet({ t: 'Сбросить демоверсию?', b: 'Весь прогресс вернётся к начальному состоянию, онбординг можно пройти заново.', reset: true })} style={{ all: 'unset', cursor: 'pointer', display: 'block', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 10px' }}>
+            <span style={{ flex: 'none', width: 38, height: 38, borderRadius: 12, background: 'rgba(255,255,255,.06)', color: '#b9a6b3', display: 'grid', placeItems: 'center' }}><Ic n="reset" s={17} /></span>
+            <div style={{ flex: 1 }}><p style={{ fontSize: 14, fontWeight: 700 }}>Сбросить демоверсию</p>
+              <p className="sub" style={{ fontSize: 11.5, marginTop: 2 }}>Пройти сценарий с начала</p></div>
+          </div>
+        </button>
+      </div>
+      <p className="sub" style={{ fontSize: 11.5, textAlign: 'center', padding: '0 20px' }}>Демоверсия без сервера. Видео не передаётся между режимами, оплата и Telegram не подключены.</p>
+    </div>
+  </div>;
+}
+/* ============ КАБИНЕТ КУРАТОРА ============ */
+function CuratorHome({ ctx }) {
+  const { st, push, upd, setStack } = ctx;
+  const queue = st.assignments.filter(a => a.status === 'pending');
+  const diagWaiting = st.diagnosis.status === 'pending';
+  const students = [
+    { id: 'anna', name: st.profile.name === 'Аня' ? 'Анна' : st.profile.name, role: st.profile.danceRole, goal: st.goal ? st.goal.t : '', week: st.week, diag: st.diagnosis.status, pending: queue.length, me: true },
+    ...st.others
+  ];
+  return <div className="fadein">
+    <header style={{ padding: '22px 18px 14px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+      <div style={{ flex: 1 }}>
+        <Tag bg="rgba(138,61,255,.22)" c="#c9a6ff">Режим куратора</Tag>
+        <h1 className="big" style={{ fontSize: 27, marginTop: 10 }}>Кабинет <span className="acc">Марии</span></h1>
+        <p className="sub tnum" style={{ fontSize: 13, marginTop: 7 }}>{queue.length} работ на проверке{diagWaiting ? ' · 1 диагностика' : ''}</p>
+      </div>
+      <button onClick={() => { upd(() => ({ role: 'member' })); setStack([{ s: 'home' }]); }} aria-label="Выйти" style={{ flex: 'none', width: 40, height: 40, borderRadius: 999, background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', color: '#fff', display: 'grid', placeItems: 'center', cursor: 'pointer' }}><Ic n="logout" s={17} /></button>
+    </header>
+    <div style={{ padding: '0 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      {diagWaiting && <div className="glass" style={{ padding: 16, borderColor: 'rgba(255,192,106,.4)' }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+          <span style={{ flex: 'none', width: 40, height: 40, borderRadius: 999, background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 16 }}>{st.profile.name[0]}</span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p style={{ fontSize: 14.5, fontWeight: 700 }}>{st.profile.name} · стартовая диагностика</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 3 }}>{st.goal ? st.goal.t : ''}</p>
+          </div>
+          <Tag bg={DIAG_ST.pending.bg} c={DIAG_ST.pending.c}>Новая</Tag>
+        </div>
+        <button className="btn" style={{ marginTop: 14 }} onClick={() => push('cdiag')}>Провести диагностику</button>
+      </div>}
+
+      <p className="kick">Очередь проверок</p>
+      {queue.length === 0 && <div className="glass" style={{ padding: 22, textAlign: 'center' }}><p className="sub" style={{ fontSize: 14 }}>Все работы проверены.</p></div>}
+      {queue.map(a => <div key={a.id} className="glass" style={{ padding: 16 }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+          <span style={{ flex: 'none', width: 40, height: 40, borderRadius: 999, background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 16 }}>{st.profile.name[0]}</span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p style={{ fontSize: 14.5, fontWeight: 700 }}>{st.profile.name}</p>
+            <p className="sub" style={{ fontSize: 12.5, marginTop: 3 }}>Неделя {a.week} · {a.title}</p>
+            <p style={{ fontSize: 11.5, color: '#7a6675', marginTop: 4 }}>Попытка {a.attempts.length} · {a.attempts.length ? a.attempts[a.attempts.length - 1].date : ''}</p>
+          </div>
+          <Tag bg={ASG_ST.pending.bg} c={ASG_ST.pending.c}>Ожидает</Tag>
+        </div>
+        <button className="btn" style={{ marginTop: 14 }} onClick={() => push('review', a.id)}>Проверить</button>
+      </div>)}
+
+      <p className="kick" style={{ marginTop: 6 }}>Участницы</p>
+      <div className="glass" style={{ padding: 8 }}>
+        {students.map(s => <div key={s.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 10px' }}>
+          <span style={{ flex: 'none', width: 38, height: 38, borderRadius: 999, background: 'rgba(255,255,255,.08)', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 15 }}>{s.name[0]}</span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <p style={{ fontSize: 14, fontWeight: 700 }}>{s.name}</p>
+            <p className="sub tnum" style={{ fontSize: 11.5, marginTop: 2 }}>{s.week}-я неделя · {s.role}</p>
+            <p className="sub" style={{ fontSize: 11.5, marginTop: 3 }}>{s.goal}</p>
+          </div>
+          {s.diag === 'pending' ? <Tag bg={DIAG_ST.pending.bg} c={DIAG_ST.pending.c}>Ждёт диагностики</Tag>
+            : s.pending > 0 ? <Tag bg={ASG_ST.pending.bg} c={ASG_ST.pending.c}><span className="tnum">{s.pending} на проверке</span></Tag>
+              : <Tag bg="rgba(126,220,150,.14)" c="#8ee0a1">Всё проверено</Tag>}
+        </div>)}
+      </div>
+    </div>
+  </div>;
+}
+
+function CuratorDiag({ ctx }) {
+  const { st, upd, pop, setSheet } = ctx;
+  const d = st.diagnosis;
+  const goalObj = st.goal ? (findGoal(st.goal.id) || { t: st.goal.t, crit: st.goal.crit, w: DEFAULT_W }) : null;
+  const ranked = rankSkills(goalObj, st.self);
+  const suggested = st.program.priority;
+  const [scores, setScores] = useState(() => {
+    const o = {};
+    ranked.slice(0, 3).forEach(r => { o[r.id] = d.curatorScores[r.id] != null ? d.curatorScores[r.id] : st.self[r.id]; });
+    return o;
+  });
+  const [prio, setPrio] = useState(suggested);
+  const [strengths, setStrengths] = useState(d.strengths || '');
+  const [growth, setGrowth] = useState(d.growth || '');
+  const [comment, setComment] = useState(d.comment || '');
+  const [recommend, setRecommend] = useState(d.recommend || '');
+  const changed = prio.join() !== suggested.join();
+
+  const togglePrio = id => setPrio(p => p.includes(id) ? p.filter(x => x !== id) : p.length >= 3 ? p : [...p, id]);
+
+  function finish(confirmOnly) {
+    upd(s => {
+      const diagnosis = { ...s.diagnosis, status: 'done', curatorScores: scores, strengths, growth, comment, recommend, priority: prio, date: today() };
+      let program = s.program, assignments = s.assignments;
+      if (!confirmOnly) {
+        program = buildProgram(goalObj, s.self, s.profile, prio, s.program.version, 'Куратор скорректировал твой маршрут после диагностики');
+        program.confirmed = true;
+        program.history = [...s.program.history, program.history[0]];
+        const old = s.assignments;
+        assignments = makeAssignments(program).map(a => {
+          const prev = old.find(o => o.week === a.week && o.skill === a.skill);
+          return prev ? { ...a, id: prev.id, status: prev.status, attempts: prev.attempts } : a;
+        });
+      } else {
+        program = { ...s.program, confirmed: true, version: s.program.version + 1, history: [...s.program.history, { v: s.program.version + 1, reason: 'Куратор подтвердил маршрут после диагностики', date: today() }] };
+      }
+      return { diagnosis, program, assignments };
+    });
+    pop();
+    setSheet({ t: confirmOnly ? 'Маршрут подтверждён' : 'Маршрут скорректирован', b: confirmOnly ? 'Участница увидит, что программа подтверждена куратором.' : 'Сохранена новая версия маршрута с причиной изменения. Пройденные задания не сброшены.' });
+  }
+  function needMore() {
+    upd(s => ({ diagnosis: { ...s.diagnosis, status: 'more', comment: comment || 'Нужно ещё одно видео, на этом плохо видно работу стоп.' } }));
+    pop(); setSheet({ t: 'Запрошено ещё видео', b: 'Участница увидит статус «Нужно ещё видео» и сможет прислать новый файл.' });
+  }
+  const ex = () => {
+    setStrengths('Корпус держишь ровно, не боишься камеры, движение доводишь до конца.');
+    setGrowth('Взгляд уходит в пол на сложных местах, перенос веса пока рваный.');
+    setComment('Для твоей цели сейчас решают подача и техника. Импровизацию отложим, она не мешает снять чистую связку.');
+    setRecommend('Снимай себя раз в неделю, даже если не нравится результат.');
+  };
+
+  return <div className="fadein">
+    <div style={{ padding: '14px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <Tag bg={DIAG_ST[d.status].bg} c={DIAG_ST[d.status].c}>{DIAG_ST[d.status].l}</Tag>
+        <h2 className="big" style={{ fontSize: 23, marginTop: 12 }}>Диагностика · {st.profile.name}</h2>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Контекст участницы</div>
+        {[['Уровень', st.profile.status], ['Долгосрочная роль', st.profile.danceRole], ['Цель на 12 недель', st.goal ? st.goal.t : ''], ['Критерий', st.goal ? st.goal.crit : '']].map(([k, v]) =>
+          <div key={k} style={{ marginTop: 10 }}>
+            <p className="sub" style={{ fontSize: 11.5 }}>{k}</p>
+            <p style={{ fontSize: 13.5, fontWeight: 600, marginTop: 2, lineHeight: 1.4 }}>{v}</p>
+          </div>)}
+        <div className="kick" style={{ marginTop: 16, marginBottom: 8 }}>Ответы анкеты</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+          {[...st.profile.q3, ...st.profile.q4, ...st.profile.q5].map(t => <span key={t} className="chip" style={{ fontSize: 11, padding: '5px 9px' }}>{t}</span>)}
+        </div>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Самооценка участницы</div>
+        {SKILLS.map(s => <div key={s.id} style={{ marginTop: 10 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 5 }}>
+            <span>{s.name}</span><span className="tnum" style={{ color: '#ff79b0', fontWeight: 700 }}>{st.self[s.id]}</span>
+          </div><Bar v={st.self[s.id] * 10} />
+        </div>)}
+      </div>
+      <div className="glass2" style={{ padding: 16 }}>
+        <div className="kick">Стартовое видео</div>
+        <p style={{ fontSize: 13.5, marginTop: 8 }}>{d.video && d.video.name ? d.video.name : 'Видео не присылали'}</p>
+        {d.video && d.video.url
+          ? <div style={{ marginTop: 12 }}><VideoBox seed={2} label="Видео участницы" src={d.video.url} /></div>
+          : <p className="sub" style={{ fontSize: 11.5, marginTop: 6 }}>Видео было выбрано локально в режиме участницы. Без сервера оно недоступно в кабинете куратора, поэтому воспроизведение здесь не имитируем.</p>}
+      </div>
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Оценка куратора по ключевым навыкам</div>
+        <p className="sub" style={{ fontSize: 11.5, marginTop: 6 }}>Оцениваем только то, что важно для цели. Остальное оставляем без оценки.</p>
+        {Object.keys(scores).map(id => <div key={id} className="srow" style={{ marginTop: 14, marginBottom: 6 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+            <label htmlFor={'cs-' + id} style={{ fontSize: 14, fontWeight: 700 }}>{SK(id).name}</label>
+            <span className="val" style={{ fontSize: 18 }}>{scores[id]}</span>
+          </div>
+          <input id={'cs-' + id} type="range" min="0" max="10" step="1" value={scores[id]} onChange={e => setScores(c => ({ ...c, [id]: +e.target.value }))}
+            style={{ background: 'linear-gradient(to right,#ff2d8a 0%,#c04dff ' + scores[id] * 10 + '%,rgba(255,255,255,.14) ' + scores[id] * 10 + '%,rgba(255,255,255,.14) 100%)' }} />
+        </div>)}
+      </div>
+
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Приоритетные навыки на цикл</div>
+        <p className="sub" style={{ fontSize: 11.5, marginTop: 6 }}>Система предложила: {suggested.map(x => SK(x).short).join(', ')}. Можно изменить, тогда маршрут пересоберётся с новой версией.</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
+          {SKILLS.map(s => <button key={s.id} className={'spill' + (prio.includes(s.id) ? ' sel' : '')} style={{ fontSize: 12.5, padding: '9px 14px' }} onClick={() => togglePrio(s.id)}>{s.name}</button>)}
+        </div>
+      </div>
+
+      <button className="btn ghost" onClick={ex}>Заполнить примером</button>
+      {[['Сильные стороны', strengths, setStrengths, 'что получается уже сейчас'],
+        ['Зоны развития', growth, setGrowth, 'что мешает достичь цели'],
+        ['Комментарий', comment, setComment, 'главное, что участница должна понять'],
+        ['Рекомендации', recommend, setRecommend, 'как работать ближайший месяц']].map(([lab, val, set, ph]) =>
+        <div key={lab}>
+          <label htmlFor={'d-' + lab} className="kick" style={{ display: 'block', marginBottom: 8 }}>{lab}</label>
+          <textarea id={'d-' + lab} rows="3" className="field" style={{ resize: 'none', lineHeight: 1.5 }} placeholder={ph} value={val} onChange={e => set(e.target.value)} />
+        </div>)}
+
+      <button className="btn" onClick={() => finish(!changed)}>{changed ? 'Сохранить и скорректировать маршрут' : 'Подтвердить маршрут'}</button>
+      <button className="btn ghost" onClick={needMore}>Запросить ещё видео</button>
+    </div>
+  </div>;
+}
+
+function CuratorReview({ ctx, id }) {
+  const { st, upd, pop, setSheet } = ctx;
+  const a = st.assignments.find(x => x.id === id);
+  const [good, setGood] = useState('');
+  const [imp, setImp] = useState('');
+  const [next, setNext] = useState('');
+  if (!a) return <div style={{ padding: 20 }} className="sub">Работа не найдена.</div>;
+  const at = a.attempts[a.attempts.length - 1];
+  const prev = a.attempts.slice(0, -1).filter(x => x.fb);
+  function decide(accepted) {
+    if (!good.trim() && !imp.trim() && !next.trim()) { setSheet({ t: 'Нужен комментарий', b: 'Заполни хотя бы одно поле обратной связи. Готовый текст можно подставить кнопкой «Заполнить примером» и отредактировать.' }); return; }
+    upd(s => ({
+      assignments: s.assignments.map(x => x.id !== a.id ? x : {
+        ...x, status: accepted ? 'accepted' : 'revision',
+        attempts: x.attempts.map((y, i) => i !== x.attempts.length - 1 ? y : { ...y, fb: { good: good.trim(), improve: imp.trim(), next: next.trim(), decision: accepted ? 'accepted' : 'revision', date: today() } })
+      })
+    }));
+    pop();
+    setSheet({ t: accepted ? 'Работа принята' : 'Отправлено на доработку', b: accepted ? 'Критерии этого задания подтверждены. Самооценка и неделя не изменились: участница переключит неделю сама.' : 'Участница увидит разбор и сможет прислать новую попытку. Прошлый комментарий сохранён.' });
+  }
+  const ex = () => {
+    const bank = { tech: ['Корпус держишь ровно, плечи опущены.', 'На втором шаге вес уходит в пятку раньше времени.', 'Повтори на четыре счёта и пришли ещё раз.'],
+      music: ['В бит попадаешь стабильно, счёт не нужен.', 'Акценты в припеве проходят мимо.', 'Отметь акценты голосом, потом станцуй.'],
+      plastic: ['Волна идёт из рёбер, это правильно.', 'Амплитуда маленькая, в кадре не читается.', 'Сделай вдвое медленнее и вдвое больше.'],
+      power: ['Первый дубль чистый, форма держится.', 'Во втором дубле корпус проседает.', 'Добавь планку между подходами.'],
+      show: ['Текст выучен, ты не вспоминаешь движения.', 'Взгляд уходит в пол на сложных местах.', 'Станцуй ещё раз, держа взгляд в камеру.'],
+      improv: ['Не останавливаешься, это уже хорошо.', 'Движение живёт только в руках.', 'Сними минуту, двигая только низ.'] }[a.skill];
+    setGood(bank[0]); setImp(bank[1]); setNext(bank[2]);
+  };
+  return <div className="fadein">
+    <div style={{ padding: '14px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div>
+        <h2 className="big" style={{ fontSize: 22 }}>{a.title}</h2>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 7 }}>{st.profile.name} · неделя {a.week} · навык «{SK(a.skill).name}» · попытка {a.attempts.length}</p>
+      </div>
+      <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Зачем участница делает это задание</div>
+        <p style={{ fontSize: 13.5, marginTop: 8, lineHeight: 1.45 }}>Цель на 12 недель: {st.goal ? st.goal.t : ''}</p>
+        <p className="sub" style={{ fontSize: 12.5, marginTop: 6 }}>Приоритеты цикла: {st.program.priority.map(x => SK(x).short).join(', ')}. Этап: {STAGES[stageOf(a.week)].t}.</p>
+        <div className="kick" style={{ marginTop: 16, marginBottom: 8 }}>Критерии проверки</div>
+        {a.crit.map((c, i) => <p key={i} style={{ fontSize: 13.5, lineHeight: 1.45, marginTop: 4 }}>• {c}</p>)}
+      </div>
+      <div className="glass2" style={{ padding: 16 }}>
+        <div className="kick">Видео участницы</div>
+        <p style={{ fontSize: 13.5, marginTop: 8 }}>{at && at.file ? at.file : 'файл не выбран'}</p>
+        {at && at.url ? <div style={{ marginTop: 12 }}><VideoBox seed={5} label="Видео участницы" src={at.url} /></div>
+          : <p className="sub" style={{ fontSize: 11.5, marginTop: 6 }}>Без сервера файл недоступен в этом режиме. Воспроизведение не имитируем, проверяем по описанию задания.</p>}
+      </div>
+      {prev.length > 0 && <div className="glass" style={{ padding: 18 }}>
+        <div className="kick">Предыдущие комментарии</div>
+        {prev.map((x, i) => <div key={i} style={{ marginTop: 12, paddingTop: i ? 12 : 0, borderTop: i ? '1px solid rgba(255,255,255,.08)' : 'none' }}>
+          <p className="sub" style={{ fontSize: 11.5 }}>Попытка {i + 1}, {x.fb.date}</p>
+          <p style={{ fontSize: 13, marginTop: 5, lineHeight: 1.45 }}>{x.fb.improve}</p>
+        </div>)}
+      </div>}
+      <button className="btn ghost" onClick={ex}>Заполнить примером</button>
+      {[['Что получилось', good, setGood, 'конкретные сильные стороны'],
+        ['Что нужно улучшить', imp, setImp, 'конкретные ошибки или зоны роста'],
+        ['Что делать дальше', next, setNext, 'следующее упражнение или рекомендация']].map(([lab, val, set, ph]) =>
+        <div key={lab}>
+          <label htmlFor={'f-' + lab} className="kick" style={{ display: 'block', marginBottom: 8 }}>{lab}</label>
+          <textarea id={'f-' + lab} rows="3" className="field" style={{ resize: 'none', lineHeight: 1.5 }} placeholder={ph} value={val} onChange={e => set(e.target.value)} />
+        </div>)}
+      <button className="btn" onClick={() => decide(true)}><Ic n="check" s={16} w={2.6} />Принять работу</button>
+      <button className="btn ghost" onClick={() => decide(false)}>Отправить на доработку</button>
+    </div>
+  </div>;
+}
+
+/* ============ APP ============ */
+function App() {
+  const [st, setSt] = useState(load);
+  const [stack, setStack] = useState([{ s: 'home' }]);
+  const [sheet, setSheet] = useState(null);
+  const [obStep, setObStep] = useState(0);
+  const scroller = useRef(null);
+  useEffect(() => { persist(st); }, [st]);
+  useEffect(() => { if (scroller.current) scroller.current.scrollTop = 0; }, [stack]);
+
+  const cur = stack[stack.length - 1];
+  const ctx = {
+    st, setStack,
+    upd: fn => setSt(s => ({ ...s, ...fn(s) })),
+    push: (s, p) => setStack(k => [...k, { s, p }]),
+    pop: () => setStack(k => (k.length > 1 ? k.slice(0, -1) : k)),
+    go: s => setStack([{ s }]),
+    setSheet
+  };
+
+  function reset() { const f = demoState(); setSt(f); persist(f); setStack([{ s: 'home' }]); setObStep(0); setSheet(null); }
+
+  if (!st.onboarded) {
+    return <Phone title="Кулакова Club" onBack={obStep > 0 ? () => setObStep(obStep - 1) : null}
+      onClose={() => setSheet({ t: 'Это демоверсия', b: 'В Telegram эта кнопка свернула бы мини-приложение и вернула в чат с ботом.' })}>
+      <Onboarding step={obStep} setStep={setObStep} onDone={d => {
+        const program = buildProgram(d.goalObj, d.self, d.profile, null, 0, null);
+        setSt(s => ({
+          ...s, onboarded: true, week: 1, profile: d.profile, self: d.self,
+          goal: { id: d.goalObj.id, t: d.goalObj.t, crit: d.goalObj.crit, custom: d.goalObj.id === 'own', startedAt: today(), status: 'active' },
+          diagnosis: { status: d.video ? 'pending' : 'none', video: d.video ? { name: d.video.name, available: true, url: d.video.url } : { name: null, available: false }, curatorScores: {}, strengths: '', growth: '', comment: '', priority: [], recommend: '', date: null },
+          program, assignments: makeAssignments(program), watched: []
+        }));
+        setStack([{ s: 'home' }]); setObStep(0);
+      }} />
+      <Sheet open={!!sheet} title={sheet ? sheet.t : ''} onClose={() => setSheet(null)}>{sheet ? sheet.b : ''}</Sheet>
+    </Phone>;
+  }
+
+  let body;
+  if (st.role === 'curator') {
+    body = cur.s === 'review' ? <CuratorReview ctx={ctx} id={cur.p} /> : cur.s === 'cdiag' ? <CuratorDiag ctx={ctx} /> : <CuratorHome ctx={ctx} />;
+  } else switch (cur.s) {
+    case 'path': body = <PathScreen ctx={ctx} />; break;
+    case 'lessons': body = <LessonsScreen ctx={ctx} />; break;
+    case 'feedback': body = <TasksScreen ctx={ctx} />; break;
+    case 'club': body = <ClubScreen ctx={ctx} />; break;
+    case 'skill': body = <SkillScreen ctx={ctx} id={cur.p} />; break;
+    case 'lesson': body = <LessonScreen ctx={ctx} id={cur.p} />; break;
+    case 'task': body = <TaskScreen ctx={ctx} id={cur.p} />; break;
+    case 'diag': body = <DiagScreen ctx={ctx} />; break;
+    case 'event': body = <EventScreen ctx={ctx} id={cur.p} />; break;
+    case 'profile': body = <ProfileScreen ctx={ctx} />; break;
+    default: body = <HomeScreen ctx={ctx} />;
+  }
+
+  const title = (() => {
+    if (st.role === 'curator') return cur.s === 'review' ? 'Проверка работы' : cur.s === 'cdiag' ? 'Диагностика' : 'Кабинет куратора';
+    switch (cur.s) {
+      case 'path': return 'Мой путь'; case 'lessons': return 'Уроки'; case 'feedback': return 'Обратная связь';
+      case 'club': return 'Клуб'; case 'profile': return 'Профиль'; case 'event': return 'Событие';
+      case 'diag': return 'Диагностика'; case 'task': return 'Задание';
+      case 'skill': return SK(cur.p).name;
+      case 'lesson': return (LES(cur.p) || {}).t || 'Урок';
+      default: return 'Кулакова Club';
+    }
+  })();
+
+  const pending = st.assignments.filter(a => a.status === 'pending' || a.status === 'revision').length;
+  const TABS = [
+    { s: 'home', l: 'Главная', i: 'home' }, { s: 'path', l: 'Мой путь', i: 'route' },
+    { s: 'lessons', l: 'Уроки', i: 'play' }, { s: 'feedback', l: 'Связь', i: 'chat', b: pending },
+    { s: 'club', l: 'Клуб', i: 'users' }
+  ];
+  const tabsOn = st.role === 'member';
+
+  return <Phone title={title} note={st.role === 'curator' ? 'режим куратора' : 'мини-приложение'}
+    onBack={stack.length > 1 ? ctx.pop : null}
+    onClose={() => setSheet({ t: 'Это демоверсия', b: 'В Telegram эта кнопка свернула бы мини-приложение и вернула в чат с ботом. Прогресс сохраняется.' })}>
+    <div ref={scroller} className="z noscroll" style={{ height: '100%', overflowY: 'auto', paddingBottom: tabsOn ? 86 : 20 }}>{body}</div>
+    {tabsOn && <nav style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 30, display: 'flex', padding: '8px 6px calc(10px + env(safe-area-inset-bottom))', background: 'linear-gradient(rgba(10,6,8,.2),rgba(10,6,8,.96) 45%)', backdropFilter: 'blur(14px)', borderTop: '1px solid rgba(255,255,255,.07)' }}>
+      {TABS.map(t => {
+        const on = cur.s === t.s;
+        return <button key={t.s} onClick={() => ctx.go(t.s)} aria-current={on ? 'page' : undefined}
+          style={{ flex: 1, background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, padding: '4px 0', color: on ? '#fff' : '#7a6675', fontFamily: 'inherit' }}>
+          <span style={{ position: 'relative', display: 'grid', placeItems: 'center', width: 32, height: 26 }}>
+            <Ic n={t.i} s={21} w={on ? 2.2 : 1.7} />
+            {on && <span style={{ position: 'absolute', bottom: -4, width: 18, height: 2.5, borderRadius: 999, background: 'linear-gradient(90deg,#ff2d8a,#c04dff)', boxShadow: '0 0 12px rgba(255,45,138,.8)' }} />}
+            {t.b > 0 && <span className="tnum" style={{ position: 'absolute', top: -2, right: 0, minWidth: 15, height: 15, padding: '0 3px', borderRadius: 999, background: '#ff2d8a', color: '#fff', fontSize: 9.5, fontWeight: 800, display: 'grid', placeItems: 'center' }}>{t.b}</span>}
+          </span>
+          <span style={{ fontSize: 10, fontWeight: 700 }}>{t.l}</span>
+        </button>;
+      })}
+    </nav>}
+    <Sheet open={!!sheet} title={sheet ? sheet.t : ''} onClose={() => setSheet(null)}
+      actions={sheet && sheet.reset ? <>
+        <button className="btn" onClick={reset}>Сбросить</button>
+        <button className="btn ghost" onClick={() => setSheet(null)}>Отмена</button></> : null}>
+      {sheet ? sheet.b : ''}
+    </Sheet>
+  </Phone>;
+}
+
+function Phone({ children, title, note, onBack, onClose }) {
+  return <div className="stageouter">
+    <div className="device">
+      <div className="tgstatus">
+        <span className="tnum">9:41</span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <svg width="17" height="11" viewBox="0 0 17 11" fill="#fff" aria-hidden="true"><rect x="0" y="7" width="3" height="4" rx="1" /><rect x="4.5" y="5" width="3" height="6" rx="1" /><rect x="9" y="2.5" width="3" height="8.5" rx="1" /><rect x="13.5" y="0" width="3" height="11" rx="1" /></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="#fff" strokeWidth="1.4" aria-hidden="true"><path d="M1 4.2a10 10 0 0 1 14 0M3.6 6.9a6.4 6.4 0 0 1 8.8 0M8 10.3h.01" strokeLinecap="round" /></svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none" aria-hidden="true"><rect x="0.6" y="0.6" width="20" height="10.8" rx="3" stroke="#fff" strokeOpacity=".5" /><rect x="2.2" y="2.2" width="15" height="7.6" rx="1.8" fill="#fff" /><path d="M22.4 4.2v3.6a2 2 0 0 0 0-3.6z" fill="#fff" fillOpacity=".5" /></svg>
+        </span>
+      </div>
+      <div className="tgbar">
+        {onBack ? <button className="tgbtn" onClick={onBack} aria-label="Назад"><Ic n="left" s={20} w={2.1} /></button>
+          : <span style={{ width: 34, height: 34, flex: 'none', display: 'grid', placeItems: 'center' }}>
+            <span style={{ width: 28, height: 28, borderRadius: 999, background: 'linear-gradient(135deg,#ff2d8a,#8a3dff)', display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 800 }}>К</span></span>}
+        <span className="tgttl"><b>{title}</b><span>{note || 'мини-приложение'}</span></span>
+        <button className="tgbtn" aria-label="Меню"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="5" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="12" cy="19" r="1.8" /></svg></button>
+        <button className="tgbtn" aria-label="Закрыть" onClick={onClose}><Ic n="x" s={19} w={2.1} /></button>
+      </div>
+      <div className="phone">{children}</div>
+    </div>
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
